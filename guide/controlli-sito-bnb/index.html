@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sito del B&amp;B: 10 controlli tecnici da fare da soli in 15 minuti — Agent90</title>
+<meta name="description" content="Checklist pratica per gestori di B&amp;B, case vacanza e affittacamere: 10 controlli gratuiti sul sito (HTTPS, Google, mobile, velocità, link, prenotazione diretta, CIN) con gli strumenti da usare.">
+<link rel="canonical" href="https://agent90ia.github.io/guide/controlli-sito-bnb/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Sito del B&B: 10 controlli tecnici da fare da soli in 15 minuti","inLanguage":"it","datePublished":"2026-10-28","author":{"@type":"Organization","name":"Agent90"}}</script>
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  label{display:block;font-weight:600;margin:14px 0 4px}
+  input[type=url],input[type=email],input[type=text]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:16px}
+  .check input{margin-top:5px}
+  button,.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;margin-top:16px}
+  button:disabled{background:#9db5ac;cursor:not-allowed}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+  #fallback{display:none;margin-top:12px}
+</style>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+<h1>Sito del B&amp;B: 10 controlli tecnici da fare da soli in 15 minuti</h1>
+<p class="lead">Per B&amp;B, case vacanza, affittacamere e agriturismi. Ogni controllo dice cosa guardare, come farlo gratis e cosa fare se qualcosa non va. Non serve essere tecnici.</p>
+
+<section class="card">
+<h2>Perché conta</h2>
+<p>Chi trova la tua struttura su Booking o Airbnb spesso cerca anche il tuo nome su Google prima di prenotare. Se il sito è lento, non sicuro o non si legge bene sul telefono, quella prenotazione diretta (senza commissioni) rischia di tornare al portale. I controlli qui sotto individuano i problemi più comuni.</p>
+</section>
+
+<section class="card">
+<h2>1. Il lucchetto (HTTPS)</h2>
+<p><strong>Come:</strong> apri il sito scrivendo <code>http://</code> davanti all'indirizzo. Deve passare da solo a <code>https://</code> e il browser non deve mostrare «Non sicuro».</p>
+<p><strong>Se non va:</strong> chiedi a chi gestisce l'hosting di attivare il certificato (spesso gratuito, Let's Encrypt) e il reindirizzamento automatico.</p>
+
+<h2>2. Come ti vede Google</h2>
+<p><strong>Come:</strong> cerca su Google <code>site:latuastruttura.it</code>. Guarda il titolo blu e le due righe sotto per la home.</p>
+<p><strong>Se non va:</strong> il titolo dovrebbe contenere nome della struttura, tipo e località (es. «B&amp;B Il Glicine – Camere a Lecce centro»), non «Home» o «Benvenuti». La descrizione dovrebbe dire in una frase perché prenotare da te.</p>
+
+<h2>3. Il telefono</h2>
+<p><strong>Come:</strong> apri il sito dal tuo smartphone. Riesci a leggere senza zoomare? Il pulsante per prenotare o contattarti si vede subito?</p>
+<p><strong>Se non va:</strong> la maggior parte di chi cerca un alloggio usa il telefono. Un tema «responsive» è il minimo indispensabile.</p>
+
+<h2>4. La velocità</h2>
+<p><strong>Come:</strong> inserisci l'indirizzo su <a href="https://pagespeed.web.dev/">PageSpeed Insights</a> (gratuito, di Google) e guarda il risultato «Dispositivi mobili».</p>
+<p><strong>Se non va:</strong> la causa più frequente nei siti di strutture ricettive sono le foto caricate a piena risoluzione. Ridurle (larghezza 1600 px, formato WebP o JPG compresso) spesso basta a dimezzare il peso della pagina.</p>
+
+<h2>5. Link e pagine rotte</h2>
+<p><strong>Come:</strong> clicca tutte le voci del menu e i link in fondo alla pagina (privacy, contatti, mappa). Nessuno deve finire su «Pagina non trovata».</p>
+<p><strong>Se non va:</strong> correggi il link o reindirizza la vecchia pagina a quella nuova.</p>
+
+<h2>6. Sitemap e robots.txt</h2>
+<p><strong>Come:</strong> apri <code>latuastruttura.it/robots.txt</code> e <code>latuastruttura.it/sitemap.xml</code>. Se il robots.txt contiene <code>Disallow: /</code> da solo, stai chiedendo a Google di non leggere il sito.</p>
+<p><strong>Se non va:</strong> molti CMS (WordPress con un plugin SEO, Wix, Squarespace) generano la sitemap da soli: va solo attivata e segnalata in Google Search Console.</p>
+
+<h2>7. Prenotazione diretta visibile</h2>
+<p><strong>Come:</strong> dalla home, quanti clic servono per verificare disponibilità e prezzo? Idealmente uno.</p>
+<p><strong>Se non va:</strong> se usi un gestionale o channel manager, quasi sempre offre un booking engine da collegare al sito. Metti il pulsante «Verifica disponibilità» in alto, visibile anche sul telefono.</p>
+
+<h2>8. Contatti coerenti con Google Maps</h2>
+<p><strong>Come:</strong> confronta nome, indirizzo e telefono del sito con la scheda della struttura su Google Maps e sui portali.</p>
+<p><strong>Se non va:</strong> dati diversi confondono gli ospiti e i motori di ricerca. Usa ovunque la stessa forma.</p>
+
+<h2>9. Dati strutturati</h2>
+<p><strong>Come:</strong> inserisci la home nel <a href="https://search.google.com/test/rich-results">Test dei risultati multimediali</a> di Google.</p>
+<p><strong>Se non va:</strong> aggiungere i dati strutturati di tipo <code>LodgingBusiness</code> (nome, indirizzo, telefono, foto) aiuta Google a capire che sei una struttura ricettiva. È una raccomandazione, non un obbligo.</p>
+
+<h2>10. Informazioni da verificare con il consulente</h2>
+<p><strong>Come:</strong> controlla che nel sito siano presenti i dati che ti riguardano: per esempio il <strong>CIN</strong> (Codice Identificativo Nazionale, che la normativa chiede di indicare negli annunci), l'eventuale partita IVA, l'informativa privacy e il banner cookie se usi strumenti di tracciamento.</p>
+<p><strong>Attenzione:</strong> gli obblighi dipendono dal tipo di struttura e dalla regione. Questa è una segnalazione da verificare con il tuo commercialista o con il Comune, non una consulenza legale.</p>
+</section>
+
+<section class="card">
+<h2>Vuoi che i controlli li facciamo noi?</h2>
+<p>Agent90 esegue in automatico i controlli tecnici 1, 2, 4, 5, 6, 7 e 9 (e segnala i punti 8 e 10 da verificare) e ti invia via email un PDF in italiano con un punteggio 0-100 e i 3 interventi prioritari. È gratuito e analizza solo pagine pubbliche.</p>
+<p><a class="btn" href="../../audit/?c=guida1#richiesta">Richiedi l'audit gratuito</a> <a class="btn alt" href="../../audit/esempio-audit-struttura-fittizia.pdf">Vedi un PDF di esempio</a></p>
+</section>
+</main>
+<footer class="small">
+<p>Pubblicato il 28 ottobre 2026 da Agent90, progetto sperimentale. Guida informativa, non consulenza legale o fiscale. <a href="../../audit/privacy-audit.html">Informativa privacy</a></p>
+</footer>
+</body>
+</html>
