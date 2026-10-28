@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit gratuito del sito per strutture ricettive — Agent90</title>
+<meta name="description" content="Richiedi un audit tecnico gratuito del sito della tua struttura ricettiva: errori tecnici verificati, raccomandazioni e aspetti da verificare. PDF in italiano.">
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  label{display:block;font-weight:600;margin:14px 0 4px}
+  input[type=url],input[type=email],input[type=text]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:16px}
+  .check input{margin-top:5px}
+  button,.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;margin-top:16px}
+  button:disabled{background:#9db5ac;cursor:not-allowed}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+  #fallback{display:none;margin-top:12px}
+</style>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+  <h1>Audit gratuito del sito della tua struttura ricettiva</h1>
+  <p class="lead">B&amp;B, affittacamere, agriturismi, case vacanza: ricevi via email un PDF in italiano con i problemi tecnici del tuo sito e cosa fare per primo.</p>
+
+  <section class="card">
+    <h2>Cosa ricevi</h2>
+    <p>Un report di massimo 4 pagine con punteggio tecnico 0-100 e tre sezioni distinte:</p>
+    <ul>
+      <li><strong>1. Errori tecnici verificati</strong>: link rotti, HTTPS, titoli e descrizioni, sitemap e robots, peso e tempo di caricamento della home.</li>
+      <li><strong>2. Raccomandazioni</strong>: per esempio dati strutturati per la struttura, visibilità della prenotazione diretta, segnali per Google Maps. Sono indicazioni, non errori certi.</li>
+      <li><strong>3. Possibili aspetti normativi da verificare</strong>: per esempio CIN, partita IVA e cookie. Sono segnalazioni da controllare con il tuo consulente.</li>
+      <li>I <strong>3 interventi prioritari</strong>, con cosa fare, perché conta e quanti punti si recuperano.</li>
+    </ul>
+    <p><a class="btn alt" href="esempio-audit-struttura-fittizia.pdf">Scarica il PDF di esempio</a></p>
+    <p class="small">L'esempio è dimostrativo: riguarda una struttura fittizia, non un lavoro per un cliente reale.</p>
+  </section>
+
+  <section class="card">
+    <h2>Come funziona</h2>
+    <ol>
+      <li>Indichi l'indirizzo del sito e la tua email qui sotto.</li>
+      <li>Analizziamo solo pagine pubbliche del sito (home e pochi link interni), rispettando robots.txt.</li>
+      <li>Ricevi il PDF all'email che hai indicato. Nessun invio ad altri indirizzi.</li>
+      <li>Se ti serve, puoi chiedere un report completo con interventi dettagliati: è facoltativo e ti diremo il prezzo prima, senza impegno.</li>
+    </ol>
+    <p class="note"><strong>Cosa NON è.</strong> Il report è un'analisi tecnica automatica. Non è una certificazione né una consulenza legale o fiscale. Può contenere falsi positivi: ad esempio un banner cookie caricato da JavaScript può non essere rilevato.</p>
+  </section>
+
+  <section class="card" id="richiesta">
+    <h2>Richiedi l'audit gratuito</h2>
+    <form id="req" novalidate>
+      <label for="url">Indirizzo del sito della struttura</label>
+      <input id="url" name="url" type="url" placeholder="https://www.latuastruttura.it" required>
+      <label for="email">La tua email (dove inviamo il PDF)</label>
+      <input id="email" name="email" type="email" placeholder="nome@esempio.it" required>
+      <label for="nome">Nome della struttura (facoltativo)</label>
+      <input id="nome" name="nome" type="text">
+      <label class="check"><input id="privacy" type="checkbox" required>
+        <span>Ho letto l'<a href="privacy-audit.html">informativa privacy</a> e chiedo di ricevere l'audit all'email indicata. Dichiaro di essere il gestore del sito o di averne l'incarico.</span></label>
+      <button id="go" type="submit" disabled>Prepara la richiesta</button>
+      <p class="small">Si aprirà il tuo programma di posta con un messaggio già scritto: devi solo premere Invia. Questa pagina non raccoglie né salva alcun dato.</p>
+    </form>
+    <p id="fallback" class="small">Se non si apre nulla, scrivi tu a <strong>aiworkflowlab.channel@gmail.com</strong> indicando indirizzo del sito e dicendo che accetti l'informativa privacy.</p>
+  </section>
+</main>
+<footer class="small">
+  <p><a href="privacy-audit.html">Informativa privacy per le richieste di audit</a> · <a href="../privacy.html">Informativa dell'app di posta del progetto</a></p>
+  <p>Agent90 — progetto sperimentale. Titolare del trattamento: il responsabile del progetto Agent90 (Italia), contatto <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a>.</p>
+</footer>
+<script>
+(function(){
+  // Indirizzo di ricezione delle richieste.
+  var TO = "aiworkflowlab.channel@gmail.com";
+  var f = document.getElementById("req"), go = document.getElementById("go"), chk = document.getElementById("privacy");
+  function sync(){ go.disabled = !chk.checked; }
+  chk.addEventListener("change", sync); sync();
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var url = f.url.value.trim(), mail = f.email.value.trim();
+    if(!/^https?:\/\/[^\s]+\.[^\s]+$/i.test(url)){ f.url.focus(); alert("Inserisci un indirizzo valido, per esempio https://www.latuastruttura.it"); return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ f.email.focus(); alert("Inserisci un'email valida."); return; }
+    var body = "Richiedo l'audit gratuito del sito: " + url + "\n" +
+      "Email per la risposta: " + mail + "\n" +
+      (f.nome.value.trim() ? "Struttura: " + f.nome.value.trim() + "\n" : "") +
+      "Ho letto l'informativa privacy (privacy-audit.html) e sono il gestore del sito o ne ho l'incarico.";
+    document.getElementById("fallback").style.display = "block";
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Richiesta audit gratuito") + "&body=" + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
