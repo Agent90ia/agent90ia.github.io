@@ -47,6 +47,7 @@
       <li>I <strong>3 interventi prioritari</strong>, con cosa fare, perché conta e quanti punti si recuperano.</li>
     </ul>
     <p><a class="btn alt" href="esempio-audit-struttura-fittizia.pdf">Scarica il PDF di esempio</a></p>
+    <p class="small">Preferisci fare da solo? Leggi la <a href="../guide/controlli-sito-bnb/">guida ai 10 controlli tecnici</a>.</p>
     <p class="small">L'esempio è dimostrativo: riguarda una struttura fittizia, non un lavoro per un cliente reale.</p>
   </section>
 
@@ -99,7 +100,8 @@
       (f.nome.value.trim() ? "Struttura: " + f.nome.value.trim() + "\n" : "") +
       "Ho letto l'informativa privacy (privacy-audit.html) e sono il gestore del sito o ne ho l'incarico.";
     document.getElementById("fallback").style.display = "block";
-    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Richiesta audit gratuito") + "&body=" + encodeURIComponent(body);
+    var c = (location.search.match(/[?&]c=([a-z0-9-]{1,20})/i)||[])[1];
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Richiesta audit gratuito" + (c ? " [c:" + c + "]" : "")) + "&body=" + encodeURIComponent(body);
   });
 })();
 </script>
