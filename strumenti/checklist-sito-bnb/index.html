@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist sito B&amp;B in 5 minuti: controllo gratuito — Agent90</title>
+<meta name="description" content="12 domande per controllare da solo il sito del tuo B&amp;B: HTTPS, Google, telefono, velocità, CIN, privacy. Punteggio e cosa correggere, senza raccogliere dati.">
+<link rel="canonical" href="https://agent90ia.github.io/strumenti/checklist-sito-bnb/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Checklist sito B&amp;B in 5 minuti: controllo gratuito — Agent90">
+<meta property="og:description" content="12 domande per controllare da solo il sito del tuo B&amp;B: HTTPS, Google, telefono, velocità, CIN, privacy. Punteggio e cosa correggere, senza raccogliere dati.">
+<meta property="og:url" content="https://agent90ia.github.io/strumenti/checklist-sito-bnb/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Agent90">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Checklist sito B&B in 5 minuti","url":"https://agent90ia.github.io/strumenti/checklist-sito-bnb/","inLanguage":"it","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Organization","name":"Agent90"}}</script>
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  label{display:block;font-weight:600;margin:14px 0 4px}
+  input[type=url],input[type=email],input[type=text]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:16px}
+  .check input{margin-top:5px}
+  button,.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;margin-top:16px}
+  button:disabled{background:#9db5ac;cursor:not-allowed}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+  #fallback{display:none;margin-top:12px}
+  fieldset{border:0;padding:0;margin:0}
+  .q{padding:14px 0;border-top:1px solid var(--line)}
+  .q:first-of-type{border-top:0}
+  .q p{margin:0 0 8px;font-weight:600}
+  .q .opts label{display:inline-flex;gap:6px;align-items:center;font-weight:400;margin:0 16px 0 0}
+  .big{font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1}
+  #result{display:none}
+  .tag{font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+<h1>Checklist sito B&amp;B in 5 minuti</h1>
+<p class="lead">Per B&amp;B, affittacamere, case vacanza e agriturismi. Rispondi a 12 domande sul tuo sito: ottieni un punteggio e l'elenco di cosa correggere. Funziona nel tuo browser: <strong>le risposte non vengono inviate né salvate</strong>.</p>
+
+<section class="card">
+<form id="chk" onsubmit="return false">
+<noscript><p class="note">Questa checklist richiede JavaScript. In alternativa leggi la <a href="../../guide/controlli-sito-bnb/">guida ai 10 controlli</a>.</p></noscript>
+<div id="questions"></div>
+<button type="button" id="go">Calcola il punteggio</button>
+<p class="small">«Non so» conta come da verificare, non come risposta positiva.</p>
+</form>
+</section>
+
+<section class="card" id="result" aria-live="polite">
+<h2>Il tuo risultato</h2>
+<p><span class="big" id="pct"></span> <span id="band"></span></p>
+<p id="summary"></p>
+<div id="todo"></div>
+<p class="note">Strumento informativo, non consulenza legale o fiscale. Gli obblighi (CIN, privacy, cookie) variano per Regione e tipologia di struttura: verifica con il tuo consulente o con il Comune.</p>
+</section>
+
+<section class="card">
+<h2>Vuoi che i controlli li faccia un software al posto tuo?</h2>
+<p>Agent90 analizza in automatico il sito pubblico della tua struttura e ti invia via email un PDF in italiano con un punteggio 0-100 e i 3 interventi prioritari. È gratuito e analizza solo pagine pubbliche.</p>
+<p><a class="btn" id="cta" href="../../audit/?c=tool1#richiesta">Richiedi l'audit gratuito</a> <a class="btn alt" href="../../audit/esempio-audit-struttura-fittizia.pdf">Vedi un PDF di esempio</a></p>
+</section>
+
+<section class="card">
+<h2>Fonti e guide</h2>
+<ul>
+<li><a href="../../guide/controlli-sito-bnb/">10 controlli tecnici sul sito del B&amp;B da fare da soli in 15 minuti</a>.</li>
+<li><a href="../../guide/cin-annunci-sito-bnb/">CIN negli annunci e sul sito del B&amp;B: cosa dice la norma</a>, con fonti: art. 13-ter DL 145/2023 su <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2023-10-18;145~art13ter">Normattiva</a> e FAQ del <a href="https://bdsr.ministeroturismo.gov.it/">Ministero del Turismo</a>.</li>
+<li>Garante privacy, Linee guida cookie e altri strumenti di tracciamento, provv. n. 231 del 10/06/2021 (doc. web 9677876).</li>
+</ul>
+</section>
+</main>
+<footer class="small">
+<p>Pubblicato il 1 novembre 2026 da Agent90, progetto sperimentale. Nessun cookie, nessun tracciamento, nessun dato raccolto da questa pagina. <a href="../../audit/privacy-audit.html">Informativa privacy</a></p>
+</footer>
+<script src="checklist.js"></script>
+<script>
+(function () {
+  var C = window.Checklist, answers = {};
+  var box = document.getElementById("questions");
+  C.ITEMS.forEach(function (it, i) {
+    var d = document.createElement("fieldset"); d.className = "q";
+    var p = document.createElement("p"); p.textContent = (i + 1) + ". " + it.q;
+    var t = document.createElement("span"); t.className = "tag"; t.textContent = " [" + it.area + "]"; p.appendChild(t);
+    var o = document.createElement("div"); o.className = "opts";
+    [["yes", "Sì"], ["no", "No"], ["unsure", "Non so"]].forEach(function (v) {
+      var l = document.createElement("label"), r = document.createElement("input");
+      r.type = "radio"; r.name = it.id; r.value = v[0];
+      r.addEventListener("change", function () { answers[it.id] = v[0]; });
+      l.appendChild(r); l.appendChild(document.createTextNode(v[1])); o.appendChild(l);
+    });
+    d.appendChild(p); d.appendChild(o); box.appendChild(d);
+  });
+  function item(it, label) {
+    var li = document.createElement("li");
+    var s = document.createElement("strong"); s.textContent = it.area + ": ";
+    li.appendChild(s);
+    li.appendChild(document.createTextNode(label + it.fix + " "));
+    var a = document.createElement("a"); a.href = "../../guide/" + it.guide + "/"; a.textContent = "Approfondisci";
+    li.appendChild(a); return li;
+  }
+  document.getElementById("go").addEventListener("click", function () {
+    var r = C.score(answers);
+    document.getElementById("pct").textContent = r.pct + "/100";
+    document.getElementById("band").textContent = r.band;
+    document.getElementById("summary").textContent = r.yes + " controlli su " + r.total + " superati; " + r.no.length + " da correggere; " + r.unsure.length + " da verificare.";
+    var todo = document.getElementById("todo"); todo.textContent = "";
+    [["Da correggere", r.no, ""], ["Da verificare", r.unsure, "Controlla: "]].forEach(function (g) {
+      if (!g[1].length) return;
+      var h = document.createElement("h2"); h.textContent = g[0]; todo.appendChild(h);
+      var ul = document.createElement("ul"); g[1].forEach(function (it) { ul.appendChild(item(it, g[2])); }); todo.appendChild(ul);
+    });
+    var res = document.getElementById("result"); res.style.display = "block"; res.scrollIntoView();
+  });
+})();
+</script>
+</body>
+</html>
