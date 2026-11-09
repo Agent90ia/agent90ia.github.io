@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generatore JSON-LD per B&amp;B, affittacamere e case vacanza: gratis — Agent90</title>
+<meta name="description" content="Compila i dati della tua struttura e ottieni il codice JSON-LD (schema.org) da incollare nel sito. Funziona nel tuo browser: nessun dato viene inviato o salvato.">
+<link rel="canonical" href="https://agent90ia.github.io/strumenti/jsonld-struttura-ricettiva/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Generatore JSON-LD per B&amp;B, affittacamere e case vacanza: gratis — Agent90">
+<meta property="og:description" content="Compila i dati della tua struttura e ottieni il codice JSON-LD (schema.org) da incollare nel sito. Funziona nel tuo browser: nessun dato viene inviato o salvato.">
+<meta property="og:url" content="https://agent90ia.github.io/strumenti/jsonld-struttura-ricettiva/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Agent90">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Generatore JSON-LD per strutture ricettive","url":"https://agent90ia.github.io/strumenti/jsonld-struttura-ricettiva/","inLanguage":"it","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Organization","name":"Agent90"}}</script>
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  label{display:block;font-weight:600;margin:14px 0 4px}
+  input[type=url],input[type=email],input[type=text]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:16px}
+  .check input{margin-top:5px}
+  button,.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;margin-top:16px}
+  button:disabled{background:#9db5ac;cursor:not-allowed}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+  #fallback{display:none;margin-top:12px}
+  fieldset{border:0;padding:0;margin:0}
+  .q{padding:14px 0;border-top:1px solid var(--line)}
+  .q:first-of-type{border-top:0}
+  .q p{margin:0 0 8px;font-weight:600}
+  .q .opts label{display:inline-flex;gap:6px;align-items:center;font-weight:400;margin:0 16px 0 0}
+  .big{font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1}
+  #result{display:none}
+  .tag{font-size:.8rem;color:var(--muted)}
+  textarea{width:100%;min-height:260px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:10px;border:1px solid #b9c4c0;border-radius:6px;background:#fbfcfb}
+  select{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit;background:#fff}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  #errs{display:none;border-left:4px solid #b3261e;background:#fdf1f0;padding:10px 14px;border-radius:4px;margin-top:14px}
+  #out{display:none}
+</style>
+
+<!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+<h1>Generatore JSON-LD per B&amp;B, affittacamere e case vacanza</h1>
+<p class="lead">Compila i dati della struttura e ottieni il codice dei <strong>dati strutturati</strong> (schema.org) da incollare nelle pagine del sito. Funziona nel tuo browser: <strong>i dati non vengono inviati né salvati</strong>.</p>
+
+<section class="card">
+<h2>Perché serve</h2>
+<p>In un nostro audit tecnico automatico di 147 siti di strutture ricettive italiane, il <strong>24%</strong> non aveva alcun dato strutturato nella home (<a href="../../osservatorio/">metodo e limiti nell'Osservatorio</a>). Il markup dice ai motori di ricerca che la pagina descrive una struttura ricettiva, con nome, indirizzo e telefono. Non garantisce un posizionamento migliore: è una buona base tecnica, gratuita.</p>
+</section>
+
+<section class="card">
+<form id="f" onsubmit="return false" novalidate>
+<noscript><p class="note">Questo strumento richiede JavaScript. In alternativa leggi la <a href="../../guide/controlli-sito-bnb/">guida ai 10 controlli</a>.</p></noscript>
+<label for="kind">Tipo di struttura *</label>
+<select id="kind">
+<option value="bnb">B&amp;B (BedAndBreakfast)</option>
+<option value="affittacamere">Affittacamere / guest house (LodgingBusiness)</option>
+<option value="casa">Casa vacanza (VacationRental)</option>
+</select>
+<label for="name">Nome della struttura *</label>
+<input type="text" id="name" autocomplete="off" placeholder="B&amp;B Il Glicine">
+<div class="grid">
+<div><label for="street">Via e numero civico *</label><input type="text" id="street" autocomplete="off" placeholder="Via Roma 12"></div>
+<div><label for="city">Comune *</label><input type="text" id="city" autocomplete="off" placeholder="Lecce"></div>
+<div><label for="region">Provincia o regione</label><input type="text" id="region" autocomplete="off" placeholder="LE"></div>
+<div><label for="postalCode">CAP</label><input type="text" id="postalCode" autocomplete="off" placeholder="73100"></div>
+<div><label for="telephone">Telefono *</label><input type="text" id="telephone" autocomplete="off" placeholder="+39 0832 123456"></div>
+<div><label for="email">Email</label><input type="email" id="email" autocomplete="off" placeholder="info@esempio.it"></div>
+<div><label for="url">Indirizzo del sito</label><input type="url" id="url" autocomplete="off" placeholder="https://www.esempio.it/"></div>
+<div><label for="image">Indirizzo di una foto (https://)</label><input type="url" id="image" autocomplete="off" placeholder="https://www.esempio.it/foto/facciata.jpg"></div>
+<div><label for="checkin">Check-in dalle (HH:MM)</label><input type="text" id="checkin" autocomplete="off" placeholder="15:00"></div>
+<div><label for="checkout">Check-out entro (HH:MM)</label><input type="text" id="checkout" autocomplete="off" placeholder="10:00"></div>
+</div>
+<label for="priceRange">Fascia di prezzo</label>
+<input type="text" id="priceRange" autocomplete="off" placeholder="€€ oppure 70-110 EUR">
+<label for="description">Descrizione breve</label>
+<input type="text" id="description" autocomplete="off" placeholder="Tre camere nel centro storico, colazione con prodotti locali.">
+<p class="small">* obbligatori. Usa gli stessi nome, indirizzo e telefono che compaiono sul sito, su Google Maps e sui portali.</p>
+<div id="errs" role="alert"></div>
+<button type="button" id="go">Genera il codice</button>
+</form>
+</section>
+
+<section class="card" id="out" aria-live="polite">
+<h2>Il tuo codice JSON-LD</h2>
+<p>Copia tutto il blocco e incollalo nella home del sito, dentro <code>&lt;head&gt;</code> o prima di <code>&lt;/body&gt;</code> (con WordPress: un plugin SEO o un campo «codice personalizzato»).</p>
+<textarea id="code" readonly spellcheck="false" aria-label="Codice JSON-LD generato"></textarea>
+<p><button type="button" id="copy">Copia negli appunti</button> <span id="copied" class="small"></span></p>
+<p class="note">Dopo la pubblicazione verifica il risultato con il <a href="https://search.google.com/test/rich-results">Test dei risultati multimediali di Google</a> o con il <a href="https://validator.schema.org/">validatore schema.org</a>. Non inserire dati che non compaiono anche nella pagina (per esempio recensioni inventate): Google può ignorare o penalizzare markup non corrispondente al contenuto visibile.</p>
+</section>
+
+<section class="card">
+<h2>Vuoi un controllo completo del sito?</h2>
+<p>Agent90 analizza in automatico il sito pubblico della tua struttura (anche i dati strutturati, il CIN, la velocità e la prenotazione diretta) e ti invia via email un PDF in italiano con un punteggio 0-100 e i 3 interventi prioritari. È gratuito e analizza solo pagine pubbliche.</p>
+<p><a class="btn" id="cta" href="../../audit/?c=tool2#richiesta">Richiedi l'audit gratuito</a> <a class="btn alt" href="../../audit/esempio-audit-struttura-fittizia.pdf">Vedi un PDF di esempio</a></p>
+</section>
+
+<section class="card">
+<h2>Fonti e guide</h2>
+<ul>
+<li>Vocabolario: <a href="https://schema.org/LodgingBusiness">LodgingBusiness</a>, <a href="https://schema.org/BedAndBreakfast">BedAndBreakfast</a> e <a href="https://schema.org/VacationRental">VacationRental</a> su schema.org. Per gli affittacamere non esiste un tipo dedicato: si usa LodgingBusiness.</li>
+<li><a href="../../strumenti/checklist-sito-bnb/">Checklist del sito B&amp;B in 5 minuti</a> (12 domande, punteggio).</li>
+<li><a href="../../guide/controlli-sito-bnb/">10 controlli tecnici sul sito del B&amp;B da fare da soli in 15 minuti</a>.</li>
+</ul>
+<p class="small">Strumento informativo. Il codice generato contiene solo i campi che compili; il CIN non è un campo schema.org e va mostrato nel testo visibile della pagina e negli annunci (<a href="../../guide/cin-annunci-sito-bnb/">guida al CIN</a>).</p>
+</section>
+</main>
+<footer class="small">
+<p>Pubblicato il 9 novembre 2026 da Agent90, progetto sperimentale. Nessun cookie e nessuna profilazione. Visite aggregate e anonime misurate con GoatCounter (senza cookie, senza identificare le persone). <a href="../../audit/privacy-audit.html">Informativa privacy</a></p>
+</footer>
+<script src="jsonld.js"></script>
+<script>
+(function () {
+  var G = window.JsonLdGen, ids = ["kind","name","street","city","region","postalCode","telephone","email","url","image","checkin","checkout","priceRange","description"];
+  function val() { var d = {}; ids.forEach(function (i) { d[i] = document.getElementById(i).value; }); return d; }
+  var errs = document.getElementById("errs"), out = document.getElementById("out"), code = document.getElementById("code");
+  document.getElementById("go").addEventListener("click", function () {
+    var r = G.generate(val());
+    errs.textContent = ""; document.getElementById("copied").textContent = "";
+    if (!r.ok) {
+      var ul = document.createElement("ul");
+      r.errors.forEach(function (e) { var li = document.createElement("li"); li.textContent = e; ul.appendChild(li); });
+      errs.appendChild(ul); errs.style.display = "block"; out.style.display = "none"; return;
+    }
+    errs.style.display = "none";
+    code.value = G.snippet(r.json);
+    out.style.display = "block"; out.scrollIntoView();
+  });
+  document.getElementById("copy").addEventListener("click", function () {
+    var m = document.getElementById("copied");
+    code.select();
+    var done = function () { m.textContent = "Copiato."; };
+    var fail = function () { m.textContent = "Selezionato: premi Ctrl+C (o tieni premuto su telefono)."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code.value).then(done, fail);
+    else { try { document.execCommand("copy") ? done() : fail(); } catch (e) { fail(); } }
+  });
+})();
+</script>
+</body>
+</html>
