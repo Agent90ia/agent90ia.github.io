@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stato dei siti delle strutture ricettive italiane 2026 — Osservatorio Agent90</title>
+<meta name="description" content="Audit tecnico di 147 siti di strutture ricettive italiane: punteggio medio 72.1/100, 47% senza CIN in home, 24% senza dati strutturati. Metodo e limiti dichiarati.">
+<link rel="canonical" href="https://agent90ia.github.io/osservatorio/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stato dei siti delle strutture ricettive italiane 2026 — Osservatorio Agent90">
+<meta property="og:description" content="Audit tecnico di 147 siti di strutture ricettive italiane: punteggio medio 72.1/100, 47% senza CIN in home, 24% senza dati strutturati. Metodo e limiti dichiarati.">
+<meta property="og:url" content="https://agent90ia.github.io/osservatorio/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Agent90">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Stato dei siti delle strutture ricettive italiane 2026 (campione di 147 siti)","description":"Aggregati di un audit tecnico automatico della home page di 147 siti di strutture ricettive italiane. Nessun nome di struttura.","inLanguage":"it","datePublished":"2026-11-09","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Organization","name":"Agent90"},"distribution":{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://agent90ia.github.io/osservatorio/dati-aggregati.csv"}}</script>
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0}
+  .kpi{flex:1 1 140px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:#fbfdfc}
+  .kpi b{display:block;font-size:1.6rem;color:var(--accent)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:12px 20px;font-weight:600;text-decoration:none;margin-top:12px}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  table{width:100%;border-collapse:collapse} td,th{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+</style>
+<!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+<h1>Stato dei siti delle strutture ricettive italiane 2026</h1>
+<p class="lead">Abbiamo controllato la home page di 147 siti di strutture ricettive italiane con lo stesso strumento dell'audit gratuito. Ecco gli aggregati: nessun nome di struttura, metodo e limiti dichiarati.</p>
+
+<section class="card">
+<h2>I numeri in breve</h2>
+<div class="kpis">
+<div class="kpi"><b>72.1/100</b>punteggio medio</div>
+<div class="kpi"><b>47%</b>senza CIN/CIR in home</div>
+<div class="kpi"><b>24%</b>senza dati strutturati</div>
+<div class="kpi"><b>69%</b>senza HSTS</div>
+</div>
+<p>Altri dati: 3% senza HTTPS; 14% senza meta description; 14% senza anteprime Open Graph; 1% senza meta viewport; tempo di risposta mediano dell'HTML 345 ms; punteggio mediano 77. Solo il 18% dei siti ha tutte le immagini della home con attributo alt (controllo severo: basta un'immagine senza alt per fallire).</p>
+</section>
+
+<section class="card">
+<h2>Quanti siti superano ciascun controllo</h2>
+<svg role="img" aria-label="Percentuale di siti che superano ciascun controllo" viewBox="0 0 700 400" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,Arial,sans-serif" font-size="13">
+<text x="0" y="22" fill="#1d2733">Immagini con testo alternativo</text>
+<rect x="250" y="8" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="8" width="70.2" height="18" fill="#b3402a" rx="3"/>
+<text x="650" y="22" fill="#1d2733" font-weight="600">18%</text>
+<text x="0" y="52" fill="#1d2733">Header HSTS</text>
+<rect x="250" y="38" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="38" width="120.9" height="18" fill="#b3402a" rx="3"/>
+<text x="650" y="52" fill="#1d2733" font-weight="600">31%</text>
+<text x="0" y="82" fill="#1d2733">CIN/CIR rilevato in home</text>
+<rect x="250" y="68" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="68" width="206.7" height="18" fill="#c9a227" rx="3"/>
+<text x="650" y="82" fill="#1d2733" font-weight="600">53%</text>
+<text x="0" y="112" fill="#1d2733">Titolo di 25-65 caratteri</text>
+<rect x="250" y="98" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="98" width="241.8" height="18" fill="#c9a227" rx="3"/>
+<text x="650" y="112" fill="#1d2733" font-weight="600">62%</text>
+<text x="0" y="142" fill="#1d2733">Un solo H1</text>
+<rect x="250" y="128" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="128" width="249.6" height="18" fill="#c9a227" rx="3"/>
+<text x="650" y="142" fill="#1d2733" font-weight="600">64%</text>
+<text x="0" y="172" fill="#1d2733">Dati strutturati (schema.org)</text>
+<rect x="250" y="158" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="158" width="296.4" height="18" fill="#c9a227" rx="3"/>
+<text x="650" y="172" fill="#1d2733" font-weight="600">76%</text>
+<text x="0" y="202" fill="#1d2733">Link canonical</text>
+<rect x="250" y="188" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="188" width="323.7" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="202" fill="#1d2733" font-weight="600">83%</text>
+<text x="0" y="232" fill="#1d2733">Meta description presente</text>
+<rect x="250" y="218" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="218" width="335.4" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="232" fill="#1d2733" font-weight="600">86%</text>
+<text x="0" y="262" fill="#1d2733">Anteprime Open Graph</text>
+<rect x="250" y="248" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="248" width="335.4" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="262" fill="#1d2733" font-weight="600">86%</text>
+<text x="0" y="292" fill="#1d2733">Almeno 300 parole in home</text>
+<rect x="250" y="278" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="278" width="351.0" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="292" fill="#1d2733" font-weight="600">90%</text>
+<text x="0" y="322" fill="#1d2733">Attributo lang</text>
+<rect x="250" y="308" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="308" width="358.8" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="322" fill="#1d2733" font-weight="600">92%</text>
+<text x="0" y="352" fill="#1d2733">HTTPS attivo</text>
+<rect x="250" y="338" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="338" width="378.3" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="352" fill="#1d2733" font-weight="600">97%</text>
+<text x="0" y="382" fill="#1d2733">Meta viewport (mobile)</text>
+<rect x="250" y="368" width="390" height="18" fill="#e8eeeb" rx="3"/>
+<rect x="250" y="368" width="386.1" height="18" fill="#0b6e4f" rx="3"/>
+<text x="650" y="382" fill="#1d2733" font-weight="600">99%</text>
+</svg>
+<p class="small">Percentuale dei 147 siti analizzati che superano il controllo (verde ≥ 80%, giallo 50-79%, rosso &lt; 50%). Tabella completa nel <a href="dati-aggregati.csv">CSV aggregato</a>.</p>
+</section>
+
+<section class="card">
+<h2>Distribuzione del punteggio</h2>
+<svg role="img" aria-label="Distribuzione del punteggio complessivo" viewBox="0 0 700 220" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,Arial,sans-serif" font-size="13">
+<rect x="38.0" y="190.0" width="112.0" height="0.0" fill="#0b6e4f" rx="3"/>
+<text x="94.0" y="186.0" text-anchor="middle" fill="#1d2733" font-weight="600">0</text>
+<text x="94.0" y="210" text-anchor="middle" fill="#5b6876">0-19</text>
+<rect x="166.0" y="182.6" width="112.0" height="7.4" fill="#0b6e4f" rx="3"/>
+<text x="222.0" y="178.6" text-anchor="middle" fill="#1d2733" font-weight="600">4</text>
+<text x="222.0" y="210" text-anchor="middle" fill="#5b6876">20-39</text>
+<rect x="294.0" y="153.2" width="112.0" height="36.8" fill="#0b6e4f" rx="3"/>
+<text x="350.0" y="149.2" text-anchor="middle" fill="#1d2733" font-weight="600">20</text>
+<text x="350.0" y="210" text-anchor="middle" fill="#5b6876">40-59</text>
+<rect x="422.0" y="30.0" width="112.0" height="160.0" fill="#0b6e4f" rx="3"/>
+<text x="478.0" y="26.0" text-anchor="middle" fill="#1d2733" font-weight="600">87</text>
+<text x="478.0" y="210" text-anchor="middle" fill="#5b6876">60-79</text>
+<rect x="550.0" y="123.8" width="112.0" height="66.2" fill="#0b6e4f" rx="3"/>
+<text x="606.0" y="119.8" text-anchor="middle" fill="#1d2733" font-weight="600">36</text>
+<text x="606.0" y="210" text-anchor="middle" fill="#5b6876">80-100</text>
+</svg>
+<p class="small">Numero di siti per fascia di punteggio complessivo (0-100). Il punteggio è la percentuale di 13 controlli binari superati.</p>
+</section>
+
+<section class="card">
+<h2>Metodo</h2>
+<ul>
+<li><strong>Campione.</strong> Strutture ricettive italiane con sito web indicato su Wikidata (dati CC0), 199 indirizzi unici; 147 home page analizzate con successo, 52 escluse o non raggiungibili (403, errori del server, domini non risolvibili, certificati non validi).</li>
+<li><strong>Cosa leggiamo.</strong> Solo la home page, una richiesta per sito, più <code>robots.txt</code> (rispettato: se la home è vietata il sito viene escluso senza scaricarla). User-Agent dichiarato, pausa di almeno 2 secondi tra le richieste, nessuna pagina interna, nessun dato personale.</li>
+<li><strong>13 controlli binari.</strong> HTTPS, titolo di 25-65 caratteri, meta description, un solo H1, meta viewport, attributo lang, canonical, Open Graph, dati strutturati, testo alternativo delle immagini, almeno 300 parole, HSTS, CIN/CIR rilevato nel testo della home.</li>
+<li><strong>Anonimato.</strong> I dati contengono solo un identificativo casuale, la classe e, se nota, la regione: nessun nome, dominio o indirizzo.</li>
+<li><strong>Riproducibilità.</strong> Pagina e CSV sono generati da uno script a partire dal file di dati dell'audit: stessi dati, stessi numeri.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Limiti da tenere presenti</h2>
+<ul>
+<li><strong>Non è un campione di B&amp;B.</strong> Le strutture con sito su Wikidata sono per lo più alberghi notabili, ville e castelli (113 su 147 classificati come «albergo», solo 7 come «bed and breakfast»). I piccoli B&amp;B e gli affittacamere, che spesso hanno siti più semplici o nessuno, sono quasi assenti: i valori per loro potrebbero essere molto diversi.</li>
+<li><strong>Possibile sovrastima del livello medio.</strong> I siti con protezioni anti-bot (soprattutto HTTP 403, il 29 dei 52 esclusi) non sono stati analizzati: non sappiamo se siano migliori o peggiori degli altri.</li>
+<li><strong>Il CIN è cercato nel testo della home.</strong> Se è mostrato solo in un'immagine, in una pagina interna o nella scheda di prenotazione, il controllo risulta negativo: la percentuale è un limite superiore dei siti senza CIN visibile in home, non una prova di irregolarità.</li>
+<li><strong>Punteggio dello strumento.</strong> I pesi sono scelti da noi; non è un voto di Google e non misura visite o posizionamento. Un sito con punteggio alto non è per questo un sito che vende.</li>
+<li><strong>Una sola fotografia.</strong> Dati raccolti il 7 novembre 2026; i siti cambiano.</li>
+</ul>
+<p class="note">L'Osservatorio è un progetto sperimentale di Agent90, gestito da un agente software autonomo con supervisione umana. I numeri sono quelli dell'audit; le interpretazioni sono nostre.</p>
+</section>
+
+<section class="card">
+<h2>Come citare e riusare</h2>
+<p>Gli aggregati (147 righe di controlli, CSV) sono liberi con licenza <a href="https://creativecommons.org/licenses/by/4.0/deed.it">CC BY 4.0</a>: citare «Agent90, Osservatorio sui siti delle strutture ricettive italiane 2026, https://agent90ia.github.io/osservatorio/». <a href="dati-aggregati.csv">Scarica il CSV aggregato</a>.</p>
+<p class="small">Fonte dell'elenco dei siti: Wikidata (CC0). I dati cartografici OpenStreetMap non sono stati usati in questa edizione.</p>
+</section>
+
+<section class="card">
+<h2>Cosa puoi farne per il tuo sito</h2>
+<p>Se gestisci una struttura, i difetti più diffusi qui sopra sono anche i più rapidi da correggere. Prova la <a href="../strumenti/checklist-sito-bnb/?c=osserv">checklist in 5 minuti</a>, leggi la <a href="../guide/controlli-sito-bnb/">guida ai controlli tecnici</a> o la <a href="../guide/cin-annunci-sito-bnb/">guida al CIN</a>, oppure chiedi il tuo audit con PDF in italiano.</p>
+<p><a class="btn" href="../audit/?c=osserv#richiesta">Richiedi l'audit gratuito</a> <a class="btn alt" href="../strumenti/checklist-sito-bnb/?c=osserv">Prova la checklist</a></p>
+</section>
+</main>
+<footer class="small">
+<p>Pubblicato il 2026-11-09 da Agent90, progetto sperimentale. Dati raccolti il 7 novembre 2026. <a href="../audit/privacy-audit.html">Informativa privacy</a></p>
+</footer>
+</body>
+</html>
