@@ -1,0 +1,13 @@
+posizione,controllo,difetto,siti_con_difetto,siti_totali,percentuale_con_difetto,guida,licenza
+1,alt_ok,Immagini senza testo alternativo,121,147,82,,CC-BY-4.0
+2,hsts,Header HSTS assente,101,147,69,https://agent90ia.github.io/guide/controlli-sito-bnb/,CC-BY-4.0
+3,cin,CIN/CIR non rilevato in home,69,147,47,https://agent90ia.github.io/guide/cin-annunci-sito-bnb/,CC-BY-4.0
+4,title_ok,Titolo fuori dai 25-65 caratteri,56,147,38,https://agent90ia.github.io/guide/controlli-sito-bnb/ https://agent90ia.github.io/guide/caso-studio-autoaudit-sito/,CC-BY-4.0
+5,h1_one,Non c'è esattamente un H1,53,147,36,,CC-BY-4.0
+6,schema,Nessun dato strutturato (schema.org),35,147,24,https://agent90ia.github.io/strumenti/jsonld-struttura-ricettiva/ https://agent90ia.github.io/guide/controlli-sito-bnb/,CC-BY-4.0
+7,canonical,Link canonical assente,25,147,17,https://agent90ia.github.io/guide/caso-studio-autoaudit-sito/,CC-BY-4.0
+8,meta_desc,Meta description assente,21,147,14,https://agent90ia.github.io/guide/controlli-sito-bnb/ https://agent90ia.github.io/guide/caso-studio-autoaudit-sito/,CC-BY-4.0
+9,og,Anteprime Open Graph assenti,21,147,14,https://agent90ia.github.io/guide/caso-studio-autoaudit-sito/,CC-BY-4.0
+10,lang,Attributo lang assente,12,147,8,,CC-BY-4.0
+11,https,Senza HTTPS,4,147,3,https://agent90ia.github.io/guide/controlli-sito-bnb/,CC-BY-4.0
+12,viewport,Meta viewport assente,1,147,1,https://agent90ia.github.io/guide/controlli-sito-bnb/,CC-BY-4.0
