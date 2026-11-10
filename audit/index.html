@@ -45,6 +45,8 @@
 <main>
   <h1>Audit gratuito del sito della tua struttura ricettiva</h1>
   <p class="lead">B&amp;B, affittacamere, agriturismi, case vacanza: ricevi via email un PDF in italiano con i problemi tecnici del tuo sito e cosa fare per primo.</p>
+  <p><a class="btn" href="#richiesta">Richiedi l'audit gratuito</a></p>
+  <p class="small">Gratis, senza account e senza carta di credito: serve solo l'indirizzo del sito e la tua email. Analizziamo solo pagine pubbliche.</p>
 
   <section class="card">
     <h2>Cosa ricevi</h2>
@@ -65,7 +67,7 @@
     <ol>
       <li>Indichi l'indirizzo del sito e la tua email qui sotto.</li>
       <li>Analizziamo solo pagine pubbliche del sito (home e pochi link interni), rispettando robots.txt.</li>
-      <li>Ricevi il PDF all'email che hai indicato. Nessun invio ad altri indirizzi.</li>
+      <li>Ricevi il PDF all'email che hai indicato. Nessun invio ad altri indirizzi. Una richiesta per sito ogni 30 giorni.</li>
       <li>Facoltativo: il <strong>report completo costa EUR 99</strong> (vedi sotto). Puoi prenotarlo senza pagare nulla: è un interesse <strong>non vincolante</strong>.</li>
     </ol>
     <p class="note"><strong>Cosa NON è.</strong> Il report è un'analisi tecnica automatica. Non è una certificazione né una consulenza legale o fiscale. Può contenere falsi positivi: ad esempio un banner cookie caricato da JavaScript può non essere rilevato.</p>
@@ -87,17 +89,20 @@
     <h2>Richiedi l'audit gratuito</h2>
     <form id="req" novalidate>
       <label for="url">Indirizzo del sito della struttura</label>
-      <input id="url" name="url" type="url" placeholder="https://www.latuastruttura.it" required>
+      <input id="url" name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://www.latuastruttura.it" required>
       <label for="email">La tua email (dove inviamo il PDF)</label>
-      <input id="email" name="email" type="email" placeholder="nome@esempio.it" required>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@esempio.it" required>
+      <p class="small" style="margin:4px 0 0">Usiamo email e indirizzo del sito solo per risponderti, come spiegato nell'<a href="privacy-audit.html">informativa privacy</a>.</p>
       <label for="nome">Nome della struttura (facoltativo)</label>
-      <input id="nome" name="nome" type="text">
+      <input id="nome" name="nome" type="text" autocomplete="organization">
       <label class="check"><input id="privacy" type="checkbox" required>
         <span>Ho letto l'<a href="privacy-audit.html">informativa privacy</a> e chiedo di ricevere l'audit all'email indicata. Dichiaro di essere il gestore del sito o di averne l'incarico.</span></label>
       <button id="go" type="submit" disabled>Prepara la richiesta</button>
+      <p id="hint" class="small" style="margin:6px 0 0">Per attivare il pulsante spunta la casella qui sopra.</p>
+      <p id="err" class="small" role="alert" style="color:#a12622;margin:6px 0 0"></p>
       <p class="small">Si aprirà il tuo programma di posta con un messaggio già scritto: devi solo premere Invia. Questa pagina non raccoglie né salva alcun dato.</p>
     </form>
-    <p id="fallback" class="small">Se non si apre nulla, scrivi tu a <strong>aiworkflowlab.channel@gmail.com</strong> indicando indirizzo del sito e dicendo che accetti l'informativa privacy.</p>
+    <div id="fallback" class="small"><p>Se non si apre nulla (succede se non hai un programma di posta sul dispositivo), copia questo testo e invialo tu a <strong>aiworkflowlab.channel@gmail.com</strong> con oggetto «Richiesta audit gratuito»:</p><pre id="msg" style="white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px;margin:0"></pre></div>
   </section>
 </main>
 <footer class="small">
@@ -109,17 +114,19 @@
   // Indirizzo di ricezione delle richieste.
   var TO = "aiworkflowlab.channel@gmail.com";
   var f = document.getElementById("req"), go = document.getElementById("go"), chk = document.getElementById("privacy");
-  function sync(){ go.disabled = !chk.checked; }
+  function sync(){ go.disabled = !chk.checked; document.getElementById("hint").style.display = chk.checked ? "none" : "block"; }
   chk.addEventListener("change", sync); sync();
   f.addEventListener("submit", function(e){
     e.preventDefault();
     var url = f.url.value.trim(), mail = f.email.value.trim();
-    if(!/^https?:\/\/[^\s]+\.[^\s]+$/i.test(url)){ f.url.focus(); alert("Inserisci un indirizzo valido, per esempio https://www.latuastruttura.it"); return; }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ f.email.focus(); alert("Inserisci un'email valida."); return; }
+    var err = document.getElementById("err"); err.textContent = "";
+    if(!/^https?:\/\/[^\s]+\.[^\s]+$/i.test(url)){ f.url.focus(); err.textContent = "Inserisci un indirizzo valido, per esempio https://www.latuastruttura.it"; return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ f.email.focus(); err.textContent = "Inserisci un'email valida."; return; }
     var body = "Richiedo l'audit gratuito del sito: " + url + "\n" +
       "Email per la risposta: " + mail + "\n" +
       (f.nome.value.trim() ? "Struttura: " + f.nome.value.trim() + "\n" : "") +
       "Ho letto l'informativa privacy (privacy-audit.html) e sono il gestore del sito o ne ho l'incarico.";
+    document.getElementById("msg").textContent = body;
     document.getElementById("fallback").style.display = "block";
     var c = (location.search.match(/[?&]c=([a-z0-9-]{1,20})/i)||[])[1];
     window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Richiesta audit gratuito" + (c ? " [c:" + c + "]" : "")) + "&body=" + encodeURIComponent(body);
