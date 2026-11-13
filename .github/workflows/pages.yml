@@ -1,0 +1,32 @@
+name: Deploy Pages (con dati venditore resi al build)
+# Richiede: Settings > Pages > Source = "GitHub Actions" e il secret SELLER_JSON.
+# Senza il secret il render fallisce e NON viene pubblicato nulla (fail-closed).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render (segnaposto -> dati venditore)
+        env:
+          SELLER_JSON: ${{ secrets.SELLER_JSON }}
+        run: python3 tools/render_site.py . _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
