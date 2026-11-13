@@ -26,7 +26,7 @@
 <dl><dt>Name</dt><dd id="rn"></dd><dt>Contract</dt><dd id="rc"></dd><dt>Confirmation email</dt><dd id="re"></dd></dl>
 <button type="button" id="confirm">Confirm withdrawal</button><button type="button" id="back" class="alt">Edit</button>
 </section>
-<p id="done" class="note" aria-live="polite">If your email program did not open, write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]” and the same details. Withdrawal is also valid if made by any other explicit statement sent to the seller's email (postal address and phone are in the terms of sale). If you do not receive the acknowledgement within one working day, write to us again.</p>
+<p id="done" class="note" aria-live="polite">If your email program did not open, <a id="mt" href="#">click here to reopen the pre-filled email</a>, or write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]” and the same details. Withdrawal is also valid if made by any other explicit statement sent to the seller's email (postal address and phone are in the terms of sale). If you do not receive the acknowledgement within one working day, write to us again.</p>
 <noscript><p class="note">This page needs JavaScript. Without it, write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]”, stating your name, the contract (order date or receipt number) and the email address for the confirmation.</p></noscript>
 <p class="small">We do not ask for reasons. If you asked us to start the service right away, the rules on the proportionate amount and on losing the right once the service is fully performed, described in the terms, apply. Data used only to handle the withdrawal: <a href="/audit/en/privacy.html">privacy notice</a>.</p>
 <p class="small"><a href="/condizioni/en/">Terms of sale</a> · <a href="/audit/en/privacy.html">Privacy notice</a> · <a href="/audit/en/#premium">Back to the Full report</a></p>
@@ -37,7 +37,7 @@ document.getElementById("go").onclick=function(){if(!f.reportValidity())return;
  f.style.display="none";s2.style.display="block";window.scrollTo(0,0)};
 document.getElementById("back").onclick=function(){s2.style.display="none";f.style.display="block"};
 document.getElementById("confirm").onclick=function(){var b=O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString();
- dn.style.display="block";location.href="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b)};
+ var u="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b);document.getElementById("mt").href=u;dn.style.display="block";location.href=u};
 })();</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <dl><dt>Nome</dt><dd id="rn"></dd><dt>Contratto</dt><dd id="rc"></dd><dt>Email per la conferma</dt><dd id="re"></dd></dl>
 <button type="button" id="confirm">Conferma recesso</button><button type="button" id="back" class="alt">Modifica</button>
 </section>
-<p id="done" class="note" aria-live="polite">Se non si è aperto il programma di posta, scrivi tu a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]» e gli stessi dati. Il recesso è valido anche se inviato con qualsiasi altra dichiarazione esplicita all'email del venditore (indirizzo postale e telefono nelle condizioni di vendita). Se entro un giorno lavorativo non ricevi l'avviso di ricevimento, riscrivici.</p>
+<p id="done" class="note" aria-live="polite">Se non si è aperto il programma di posta, <a id="mt" href="#">clicca qui per riaprire l'email già compilata</a>, oppure scrivi tu a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]» e gli stessi dati. Il recesso è valido anche se inviato con qualsiasi altra dichiarazione esplicita all'email del venditore (indirizzo postale e telefono nelle condizioni di vendita). Se entro un giorno lavorativo non ricevi l'avviso di ricevimento, riscrivici.</p>
 <noscript><p class="note">Per funzionare questa pagina usa JavaScript. Senza JavaScript scrivi a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]», indicando il tuo nome, il contratto (data dell'ordine o numero della ricevuta) e l'email a cui vuoi ricevere la conferma.</p></noscript>
 <p class="small">Non chiediamo motivi. Se hai chiesto di iniziare subito il servizio, valgono le regole sul proporzionale e sulla perdita del recesso a esecuzione completa descritte nelle condizioni. Dati usati solo per gestire il recesso: <a href="/audit/privacy-audit.html">informativa privacy</a>.</p>
 <p class="small"><a href="/condizioni/">Condizioni di vendita</a> · <a href="/audit/privacy-audit.html">Informativa privacy</a> · <a href="/audit/#premium">Torna al Report completo</a></p>
@@ -37,7 +37,7 @@ document.getElementById("go").onclick=function(){if(!f.reportValidity())return;
  f.style.display="none";s2.style.display="block";window.scrollTo(0,0)};
 document.getElementById("back").onclick=function(){s2.style.display="none";f.style.display="block"};
 document.getElementById("confirm").onclick=function(){var b=O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString();
- dn.style.display="block";location.href="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b)};
+ var u="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b);document.getElementById("mt").href=u;dn.style.display="block";location.href=u};
 })();</script>
 </body>
 </html>
