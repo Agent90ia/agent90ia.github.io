@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recedere dal contratto — Report completo — Agent90</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://agent90ia.github.io/recesso/">
+<link rel="alternate" hreflang="en" href="https://agent90ia.github.io/recesso/en/">
+<style>body{max-width:720px;margin:0 auto;padding:24px 20px;font:16px/1.55 system-ui,Arial,sans-serif;color:#1d2733}h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.6em}a{color:#0b6e4f}label{display:block;font-weight:600;margin:14px 0 4px}input[type=text],input[type=email]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit;box-sizing:border-box}button{background:#0b6e4f;color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;margin:16px 8px 0 0}button.alt{background:#fff;color:#0b6e4f;border:1px solid #0b6e4f}.note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}.small{font-size:.88rem;color:#5b6876}#step2,#done{display:none}dl{margin:0}dt{font-weight:600;margin-top:10px}dd{margin:2px 0 0;white-space:pre-wrap}</style>
+<!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<h1>Recedere dal contratto qui</h1>
+<p class="small"><a href="en/">English version</a></p>
+<p>Usa questa funzione se hai acquistato il Report completo come consumatore e vuoi recedere entro 14 giorni dalla conclusione del contratto (vedi le <a href="/condizioni/">condizioni di vendita</a>, art. 6). Il recesso si considera esercitato nei termini se la dichiarazione è trasmessa prima della scadenza dei 14 giorni.</p>
+<form id="f" onsubmit="return false">
+<label for="n">Il tuo nome e cognome</label><input id="n" name="n" type="text" required autocomplete="name">
+<label for="c">Contratto da cui recedi</label><input id="c" name="c" type="text" required aria-describedby="ch"><span id="ch" class="small">Data dell'ordine e, se ce l'hai, numero della ricevuta o dell'ordine Stripe (es. «ordine del 14/11/2026, ricevuta 1234-5678»)</span>
+<label for="e">Email a cui inviare la conferma del recesso</label><input id="e" name="e" type="email" required autocomplete="email">
+<button type="button" id="go">Continua</button>
+</form>
+<section id="step2" aria-live="polite">
+<h2>Controlla i dati</h2>
+<p>Verifica i dati. Premendo «Conferma recesso» si apre il tuo programma di posta con la dichiarazione già compilata: <strong>il recesso viene trasmesso quando invii quell'email</strong>. Riceverai un avviso di ricevimento con il contenuto, la data e l'ora di trasmissione.</p>
+<dl><dt>Nome</dt><dd id="rn"></dd><dt>Contratto</dt><dd id="rc"></dd><dt>Email per la conferma</dt><dd id="re"></dd></dl>
+<button type="button" id="confirm">Conferma recesso</button><button type="button" id="back" class="alt">Modifica</button>
+</section>
+<p id="done" class="note" aria-live="polite">Se non si è aperto il programma di posta, scrivi tu a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]» e gli stessi dati. Il recesso è valido anche se inviato con qualsiasi altra dichiarazione esplicita all'email del venditore (indirizzo postale e telefono nelle condizioni di vendita). Se entro un giorno lavorativo non ricevi l'avviso di ricevimento, riscrivici.</p>
+<noscript><p class="note">Per funzionare questa pagina usa JavaScript. Senza JavaScript scrivi a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]», indicando il tuo nome, il contratto (data dell'ordine o numero della ricevuta) e l'email a cui vuoi ricevere la conferma.</p></noscript>
+<p class="small">Non chiediamo motivi. Se hai chiesto di iniziare subito il servizio, valgono le regole sul proporzionale e sulla perdita del recesso a esecuzione completa descritte nelle condizioni. Dati usati solo per gestire il recesso: <a href="/audit/privacy-audit.html">informativa privacy</a>.</p>
+<p class="small"><a href="/condizioni/">Condizioni di vendita</a> · <a href="/audit/privacy-audit.html">Informativa privacy</a> · <a href="/audit/#premium">Torna al Report completo</a></p>
+<script>(function(){var f=document.getElementById("f"),s2=document.getElementById("step2"),dn=document.getElementById("done"),O={s:"Recesso dal contratto [recesso]",b0:"Dichiaro di recedere dal contratto di acquisto del Report completo (audit personalizzato del sito).",l:["Nome", "Contratto", "Email per la conferma"],t:"Compilato sul sito il"};
+function v(i){return f.elements[i].value.trim()}
+document.getElementById("go").onclick=function(){if(!f.reportValidity())return;
+ document.getElementById("rn").textContent=v("n");document.getElementById("rc").textContent=v("c");document.getElementById("re").textContent=v("e");
+ f.style.display="none";s2.style.display="block";window.scrollTo(0,0)};
+document.getElementById("back").onclick=function(){s2.style.display="none";f.style.display="block"};
+document.getElementById("confirm").onclick=function(){var b=O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString();
+ dn.style.display="block";location.href="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b)};
+})();</script>
+</body>
+</html>
