@@ -40,6 +40,7 @@
   #fallback{display:none;margin-top:12px}
 </style>
 <!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!--a90-ev--><script>(function(){function ev(n){try{var g=window.goatcounter;if(g&&typeof g.count==='function')g.count({path:n,title:n,event:true})}catch(e){}}function tag(){var m=(location.search.match(/[?&]c=([a-z0-9-]{1,20})(?:&|$)/)||[])[1];return m?':'+m:''}document.addEventListener('click',function(e){try{var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/^https?:\/\/(buy|checkout)\.stripe\.com\//i.test(h))ev('click-stripe');else if(/^mailto:/i.test(h)&&/c%3Apremium|c:premium/i.test(h))ev('click-premium-preorder'+tag());else if(/(^|\/)audit\/?([?#]|$)/.test(h)||/^https?:\/\/agent90ia\.github\.io\/audit\/?([?#]|$)/.test(h))ev('click-audit-cta'+tag())}catch(x){}},true);document.addEventListener('submit',function(e){try{if(e.target&&e.target.id==='req'){var r=document.getElementById('err');if(e.defaultPrevented&&r&&!r.textContent)ev('audit-mailto-open')}}catch(x){}});})()</script>
 </head>
 <body>
 <header>Agent90</header>
@@ -123,7 +124,7 @@
   </section>
 </main>
 <footer class="small">
-  <p><a href="privacy-audit.html">Informativa privacy per le richieste di audit</a> · <a href="../condizioni/">Condizioni di vendita</a> · <a href="../recesso/">Recedere dal contratto qui</a> · <a href="../privacy.html">Informativa dell'app di posta del progetto</a></p>
+  <p><a href="../guide/metodo-e-trasparenza/">Metodo e trasparenza: cosa controlla l'audit e cosa no</a> · <a href="privacy-audit.html">Informativa privacy per le richieste di audit</a> · <a href="../condizioni/">Condizioni di vendita</a> · <a href="../recesso/">Recedere dal contratto qui</a> · <a href="../privacy.html">Informativa dell'app di posta del progetto</a></p>
   <p>Agent90 — progetto sperimentale. Titolare del trattamento e contatti: vedi l'<a href="privacy-audit.html">informativa privacy</a>.</p>
 </footer>
 <script>

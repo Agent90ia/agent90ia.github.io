@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodo e trasparenza — Agent90</title>
+<meta name="description" content="Chi c'è dietro Agent90, dove interviene l'intelligenza artificiale, cosa controlla l'audit e cosa no, quali fonti usiamo, i limiti e come trattiamo i dati.">
+<link rel="canonical" href="https://agent90ia.github.io/guide/metodo-e-trasparenza/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Metodo e trasparenza — Agent90">
+<meta property="og:description" content="Chi c'è dietro Agent90, dove interviene l'intelligenza artificiale, cosa controlla l'audit e cosa no, quali fonti usiamo, i limiti e come trattiamo i dati.">
+<meta property="og:url" content="https://agent90ia.github.io/guide/metodo-e-trasparenza/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Agent90">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Metodo e trasparenza","inLanguage":"it","datePublished":"2026-11-12","about":"Come lavora Agent90: intelligenza artificiale dichiarata, controlli dell'audit, fonti, limiti e dati","publisher":{"@type":"Organization","name":"Agent90","url":"https://agent90ia.github.io/"}}</script>
+<style>
+  :root{--ink:#1d2733;--muted:#5b6876;--accent:#0b6e4f;--bg:#f6f8f7;--card:#fff;--line:#dde4e1}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding-top:28px;font-weight:700;letter-spacing:.02em;color:var(--accent)}
+  h1{font-size:1.9rem;line-height:1.2;margin:.6em 0 .3em}
+  h2{font-size:1.25rem;margin:0 0 .5em}
+  .lead{font-size:1.1rem;color:var(--muted);margin-top:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+  ul{padding-left:1.2em;margin:.4em 0}
+  li{margin:.3em 0}
+  label{display:block;font-weight:600;margin:14px 0 4px}
+  input[type=url],input[type=email],input[type=text]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:16px}
+  .check input{margin-top:5px}
+  button,.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;margin-top:16px}
+  button:disabled{background:#9db5ac;cursor:not-allowed}
+  .btn.alt{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+  .small{font-size:.88rem;color:var(--muted)}
+  .note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}
+  footer{padding-bottom:40px}
+  a{color:var(--accent)}
+  #fallback{display:none;margin-top:12px}
+</style>
+<!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!--a90-ev--><script>(function(){function ev(n){try{var g=window.goatcounter;if(g&&typeof g.count==='function')g.count({path:n,title:n,event:true})}catch(e){}}function tag(){var m=(location.search.match(/[?&]c=([a-z0-9-]{1,20})(?:&|$)/)||[])[1];return m?':'+m:''}document.addEventListener('click',function(e){try{var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';if(/^https?:\/\/(buy|checkout)\.stripe\.com\//i.test(h))ev('click-stripe');else if(/^mailto:/i.test(h)&&/c%3Apremium|c:premium/i.test(h))ev('click-premium-preorder'+tag());else if(/(^|\/)audit\/?([?#]|$)/.test(h)||/^https?:\/\/agent90ia\.github\.io\/audit\/?([?#]|$)/.test(h))ev('click-audit-cta'+tag())}catch(x){}},true);document.addEventListener('submit',function(e){try{if(e.target&&e.target.id==='req'){var r=document.getElementById('err');if(e.defaultPrevented&&r&&!r.textContent)ev('audit-mailto-open')}}catch(x){}});})()</script>
+</head>
+<body>
+<header>Agent90</header>
+<main>
+<h1>Metodo e trasparenza: chi siamo, cosa facciamo, cosa non possiamo promettere</h1>
+<p class="lead">Se ci affidi l'indirizzo del tuo sito, hai il diritto di sapere chi lo guarda, con quali strumenti, cosa viene controllato e cosa no. Questa pagina lo dice in chiaro, limiti compresi.</p>
+
+<section class="card">
+<h2>In sintesi</h2>
+<ul>
+<li>Agent90 è un <strong>progetto sperimentale</strong> gestito da una persona fisica, il titolare, con l'aiuto di un <strong>agente software basato su intelligenza artificiale</strong> di nome Mercurio.</li>
+<li>L'audit è <strong>tecnico e automatico</strong>: legge solo pagine pubbliche e restituisce un punteggio 0-100 con gli interventi prioritari.</li>
+<li><strong>Non promettiamo posizionamenti, visite, prenotazioni o ricavi.</strong> Il punteggio non è un voto di Google.</li>
+<li>Non mandiamo email o messaggi promozionali non richiesti: il report individuale parte solo su tua richiesta. Per l'Osservatorio analizziamo invece pagine pubbliche in forma aggregata e anonima.</li>
+<li>Le guide e i dati che pubblichiamo indicano le fonti e i limiti accanto alle affermazioni.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Chi è Agent90</h2>
+<p>Agent90 è il nome commerciale (marchio non registrato) con cui il titolare, persona fisica, porta avanti un progetto di impresa digitale: audit tecnici di siti web, guide e strumenti gratuiti per chi gestisce strutture ricettive. È un progetto <strong>nuovo e piccolo</strong>: non ci sono ancora clienti storici, recensioni o casi di successo da citare e non ne inventiamo.</p>
+<p>Il titolare risponde delle decisioni economiche, dei pagamenti e dei contatti commerciali, e risponde alle richieste sulla privacy all'indirizzo <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a>. I dati del titolare e il trattamento dei dati sono nell'<a href="../../audit/privacy-audit.html">informativa privacy</a>.</p>
+</section>
+
+<section class="card">
+<h2>Dove interviene l'intelligenza artificiale</h2>
+<ul>
+<li><strong>Mercurio è un agente software di intelligenza artificiale</strong>, non una persona. Scrive le guide, sviluppa gli strumenti, legge le richieste e prepara le risposte e i testi dei report.</li>
+<li>Il <strong>punteggio e i controlli tecnici dell'audit sono calcolati da uno script</strong> con regole fisse e pesi dichiarati: a parità di sito, stesso risultato. Non sono un giudizio «a sensazione» di un modello.</li>
+<li>Il modello di linguaggio usato è fornito da Anthropic (vedi l'informativa privacy). Può sbagliare: per questo i punti normativi sono accompagnati dalla fonte ufficiale e da un avviso di verifica.</li>
+<li>Quando rispondiamo in pubblico (per esempio in una community, solo dove qualcuno ha chiesto aiuto) dichiariamo di essere un assistente di intelligenza artificiale.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Cosa controlla l'audit</h2>
+<p>Il controllo legge la <strong>home page</strong>, <code>robots.txt</code> e la sitemap, e verifica con richieste leggere (senza scaricare i contenuti) fino a 25 link interni. Tutto con un User-Agent dichiarato e rispettando <code>robots.txt</code>.</p>
+<ul>
+<li><strong>Tecnica di base:</strong> raggiungibilità, HTTPS e redirect da http, codice di risposta, tempo di risposta e peso dell'HTML, compressione, header di sicurezza.</li>
+<li><strong>Contenuti e SEO di base:</strong> title, meta description, titolo H1, viewport per il mobile, lingua, canonical, anteprime Open Graph, dati strutturati, testi alternativi delle immagini, quantità di testo, robots.txt, sitemap, link interni rotti.</li>
+<li><strong>Per le strutture ricettive:</strong> segnali del profilo Google Business, via di prenotazione diretta, dati strutturati di tipo ricettivo, peso della pagina da mobile.</li>
+<li><strong>Punteggio:</strong> ogni controllo ha un peso dichiarato; esito positivo vale 1, avviso 0,5, errore 0. Il risultato è la percentuale dei punti ottenuti. Il report mostra i tre interventi che farebbero recuperare più punti.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Cosa l'audit non controlla</h2>
+<ul>
+<li><strong>Non misura posizionamento, traffico, prenotazioni o conversioni.</strong> Un sito con punteggio alto non è per questo un sito che vende; uno con punteggio basso non è per questo irregolare.</li>
+<li><strong>Non è un parere legale, fiscale o di conformità.</strong> CIN, partita IVA e informativa cookie sono cercati nel testo della home e segnalati «da verificare» in una sezione a parte, fuori dal punteggio: possono essere in un'immagine, in un'altra pagina o caricati da JavaScript e quindi non visibili all'analisi automatica.</li>
+<li><strong>Non entra nel tuo sito:</strong> nessuna password, nessun accesso al pannello, nessun test invasivo, nessun controllo di sicurezza approfondito.</li>
+<li>Non guarda le pagine interne oltre al controllo dei link, non valuta la qualità delle foto o dei testi, non verifica Booking, Airbnb o altri portali.</li>
+<li>Alcuni esiti sono <strong>stime</strong> (per esempio peso della pagina da mobile, via di prenotazione diretta): nel report sono indicati come raccomandazioni, non come errori certi.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Fonti e verifiche</h2>
+<ul>
+<li>Nelle guide, ogni obbligo di legge rimanda alla fonte ufficiale (portali della Pubblica Amministrazione, norme, schede delle Questure) con la data di lettura. Dove le fonti non concordano lo scriviamo, come per i soggiorni sotto le 24 ore in <a href="../alloggiati-web-gestori-bnb/">Alloggiati Web</a>.</li>
+<li>I dati dell'<a href="../../osservatorio/">Osservatorio</a> vengono da un campione di siti pubblici (home page di strutture con sito indicato su Wikidata), senza nomi di strutture; metodo e limiti sono nella pagina, il CSV aggregato è scaricabile con licenza CC BY.</li>
+<li>Il <a href="../caso-studio-autoaudit-sito/">caso studio</a> mostra i numeri prima e dopo sul nostro stesso sito, con i limiti.</li>
+<li>Distinguiamo ciò che abbiamo verificato da ciò che è una stima, e lo scriviamo.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Limiti che dichiariamo</h2>
+<ul>
+<li>Le guide sono informative e <strong>non sono consulenza legale o fiscale</strong>: per il tuo caso verifica con l'ente competente o un professionista.</li>
+<li>Norme e procedure cambiano; ogni guida riporta la data di pubblicazione e delle letture.</li>
+<li>L'analisi automatica può sbagliare o non vedere una pagina protetta da sistemi anti-bot; in quel caso lo diciamo nel report invece di indovinare.</li>
+<li>Il campione dell'Osservatorio non rappresenta i piccoli B&amp;B (è fatto soprattutto di alberghi), e lo scriviamo nella pagina dei dati.</li>
+<li>Progetto sperimentale: tempi di risposta, servizi e funzioni possono cambiare.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Nessuna promessa di risultati</h2>
+<p>Non garantiamo che seguire le raccomandazioni migliori la posizione su Google, le visite o le prenotazioni. Gli interventi indicati riducono difetti tecnici verificabili; l'effetto commerciale dipende da molti fattori che non controlliamo e che l'audit non misura. Se in futuro offriremo servizi a pagamento, saranno indicati come tali, con prezzo e condizioni di vendita complete prima di qualsiasi acquisto; l'audit gratuito non richiede pagamenti.</p>
+</section>
+
+<section class="card">
+<h2>Come trattiamo i dati</h2>
+<ul>
+<li>Per l'audit raccogliamo l'email, l'indirizzo del sito e, se lo scrivi, il nome della struttura; il modulo della pagina non invia nulla da solo, prepara un'email dal tuo programma di posta.</li>
+<li>Non chiediamo password, accessi al sito o dati di pagamento. Non ti iscriviamo a newsletter.</li>
+<li>Conserviamo richiesta, email e report per 12 mesi dall'ultimo contatto, poi li cancelliamo; puoi chiedere la cancellazione prima.</li>
+<li>Fornitori coinvolti: server in Germania (Hetzner), Gmail per la posta, il fornitore del modello di intelligenza artificiale (Anthropic) e GitHub Pages per ospitare il sito. Non vendiamo né cediamo i dati.</li>
+<li>Questo sito non usa cookie. Misuriamo le visite con GoatCounter, in forma aggregata e anonima; dettagli e come opporsi nell'<a href="../../audit/privacy-audit.html">informativa privacy</a>, che è il testo che fa fede.</li>
+<li>Contatti non richiesti: non inviamo email, messaggi privati o moduli promozionali a strutture che non ci hanno contattato. Non pubblichiamo report su singole strutture.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Vuoi vedere come lavoriamo?</h2>
+<p>Guarda un <a href="../../audit/esempio-audit-struttura-fittizia.pdf">PDF di esempio</a> (struttura fittizia), leggi la guida ai <a href="../controlli-sito-bnb/">10 controlli tecnici</a> da fare da soli, oppure richiedi l'audit gratuito del tuo sito. Se hai domande su questa pagina o ci trovi un errore, scrivici: lo correggiamo e aggiorniamo la data.</p>
+<p><a class="btn" href="../../audit/?c=metodo#richiesta">Richiedi l'audit gratuito</a></p>
+</section>
+</main>
+<footer class="small">
+<p>Pubblicata il 12 novembre 2026 da Agent90, progetto sperimentale. Contenuto informativo, non consulenza legale o fiscale. <a href="../../audit/privacy-audit.html">Informativa privacy</a></p>
+</footer>
+</body>
+</html>
