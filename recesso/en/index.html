@@ -18,26 +18,39 @@
 <label for="n">Your full name</label><input id="n" name="n" type="text" required autocomplete="name">
 <label for="c">Contract you are withdrawing from</label><input id="c" name="c" type="text" required aria-describedby="ch"><span id="ch" class="small">Order date and, if you have it, the receipt or Stripe order number (e.g. “order of 14/11/2026, receipt 1234-5678”)</span>
 <label for="e">Email address to send the withdrawal confirmation to</label><input id="e" name="e" type="email" required autocomplete="email">
+<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <button type="button" id="go">Continue</button>
 </form>
 <section id="step2" aria-live="polite">
 <h2>Check your details</h2>
-<p>Check your details. Pressing “Confirm withdrawal” opens your email program with the statement filled in: <strong>your withdrawal is sent when you send that email</strong>. You will receive an acknowledgement of receipt with its content and the date and time it was sent.</p>
+<p>Check your details. Pressing “Confirm withdrawal” <strong>transmits your declaration right away from this website</strong> (your email program is not needed) and you will receive by email, on a durable medium, an acknowledgement of receipt with its content and the date and time of transmission.</p>
 <dl><dt>Name</dt><dd id="rn"></dd><dt>Contract</dt><dd id="rc"></dd><dt>Confirmation email</dt><dd id="re"></dd></dl>
 <button type="button" id="confirm">Confirm withdrawal</button><button type="button" id="back" class="alt">Edit</button>
 </section>
-<p id="done" class="note" aria-live="polite">If your email program did not open, <a id="mt" href="#">click here to reopen the pre-filled email</a>, or write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]” and the same details. Withdrawal is also valid if made by any other explicit statement sent to the seller's email (postal address and phone are in the terms of sale). If you do not receive the acknowledgement within one working day, write to us again.</p>
+<p id="done" class="note" aria-live="polite"><span id="dmsg"></span> <span id="dalt" style="display:none">If sending failed you can also <a id="mt" href="#">open the pre-filled email</a> or write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]” and the same details (postal address and phone are in the terms of sale).</span></p>
 <noscript><p class="note">This page needs JavaScript. Without it, write to <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> with the subject “Recesso dal contratto [recesso]”, stating your name, the contract (order date or receipt number) and the email address for the confirmation.</p></noscript>
 <p class="small">We do not ask for reasons. If you asked us to start the service right away, the rules on the proportionate amount and on losing the right once the service is fully performed, described in the terms, apply. Data used only to handle the withdrawal: <a href="/audit/en/privacy.html">privacy notice</a>.</p>
 <p class="small"><a href="/condizioni/en/">Terms of sale</a> · <a href="/audit/en/privacy.html">Privacy notice</a> · <a href="/audit/en/#premium">Back to the Full report</a></p>
-<script>(function(){var f=document.getElementById("f"),s2=document.getElementById("step2"),dn=document.getElementById("done"),O={s:"Recesso dal contratto [recesso]",b0:"I withdraw from the contract for the purchase of the Full report (personalised website audit).",l:["Name", "Contract", "Confirmation email"],t:"Completed on the website at"};
+<script>(function(){var EP="",f=document.getElementById("f"),s2=document.getElementById("step2"),dn=document.getElementById("done"),dm=document.getElementById("dmsg"),da=document.getElementById("dalt"),cb=document.getElementById("confirm"),O={s:"Recesso dal contratto [recesso]",b0:"I withdraw from the contract for the purchase of the Full report (personalised website audit).",l:["Name", "Contract", "Confirmation email"],t:"Completed on the website at"},M={"ok": "Withdrawal transmitted and recorded. Reference: {ref}. Date and time of transmission: {when} (Italian time). We sent the acknowledgement of receipt to the email you gave: if you do not see it within a few minutes, check spam and write to us.", "already": "This withdrawal was already transmitted and recorded (reference {ref}, {when} Italian time): it was not recorded a second time and the acknowledgement has already been sent.", "norcpt": "Your withdrawal was transmitted and recorded (reference {ref}, {when} Italian time) but we could not send you the acknowledgement right now. Keep this screen: we will write to the email you gave; you can also write to the address below.", "fail": "We could not transmit your withdrawal: it is NOT recorded. Try again shortly or use the alternative below (direct email to the seller), equally valid.", "invalid": "Check your details: name, contract and a valid email are required.", "busy": "System busy, try again in a few seconds.", "limit": "Service temporarily unavailable: use the alternative below (direct email)."},L="en-GB";
 function v(i){return f.elements[i].value.trim()}
+function body(){return O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString()}
+function mailto(){return "mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(body())}
+function show(t,alt){dm.textContent=t;da.style.display=alt?"inline":"none";if(alt)document.getElementById("mt").href=mailto();dn.style.display="block";dn.scrollIntoView&&dn.scrollIntoView()}
+function when(s){try{return new Date(s).toLocaleString(L,{timeZone:"Europe/Rome",dateStyle:"short",timeStyle:"medium"})}catch(e){return s}}
+function fill(m,r){return m.replace("{ref}",r.ref||"").replace("{when}",when(r.transmitted_at))}
 document.getElementById("go").onclick=function(){if(!f.reportValidity())return;
  document.getElementById("rn").textContent=v("n");document.getElementById("rc").textContent=v("c");document.getElementById("re").textContent=v("e");
  f.style.display="none";s2.style.display="block";window.scrollTo(0,0)};
 document.getElementById("back").onclick=function(){s2.style.display="none";f.style.display="block"};
-document.getElementById("confirm").onclick=function(){var b=O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString();
- var u="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b);document.getElementById("mt").href=u;dn.style.display="block";location.href=u};
+cb.onclick=function(){if(cb.disabled)return;
+ if(!EP){show(M.fail,true);return}
+ cb.disabled=true;var old=cb.textContent;cb.textContent="Sending…";var ac=new AbortController(),to=setTimeout(function(){ac.abort()},25000);
+ fetch(EP,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:v("n"),contract:v("c"),email:v("e"),lang:"en",website:f.elements["website"].value}),signal:ac.signal,redirect:"follow"})
+  .then(function(r){return r.json()}).then(function(r){clearTimeout(to);
+   if(r&&r.ok&&(r.status==="received"||r.status==="already")){s2.style.display="none";show(fill(r.status==="already"?M.already:M.ok,r),false)}
+   else if(r&&r.ok&&r.status==="recorded_no_receipt"){s2.style.display="none";show(fill(M.norcpt,r),true)}
+   else{cb.disabled=false;cb.textContent=old;show(r&&M[r.error]?M[r.error]:M.fail,!(r&&r.error==="invalid"))}})
+  .catch(function(){clearTimeout(to);cb.disabled=false;cb.textContent=old;show(M.fail,true)})};
 })();</script>
 </body>
 </html>

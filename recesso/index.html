@@ -18,26 +18,39 @@
 <label for="n">Il tuo nome e cognome</label><input id="n" name="n" type="text" required autocomplete="name">
 <label for="c">Contratto da cui recedi</label><input id="c" name="c" type="text" required aria-describedby="ch"><span id="ch" class="small">Data dell'ordine e, se ce l'hai, numero della ricevuta o dell'ordine Stripe (es. «ordine del 14/11/2026, ricevuta 1234-5678»)</span>
 <label for="e">Email a cui inviare la conferma del recesso</label><input id="e" name="e" type="email" required autocomplete="email">
+<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <button type="button" id="go">Continua</button>
 </form>
 <section id="step2" aria-live="polite">
 <h2>Controlla i dati</h2>
-<p>Verifica i dati. Premendo «Conferma recesso» si apre il tuo programma di posta con la dichiarazione già compilata: <strong>il recesso viene trasmesso quando invii quell'email</strong>. Riceverai un avviso di ricevimento con il contenuto, la data e l'ora di trasmissione.</p>
+<p>Verifica i dati. Premendo «Conferma recesso» la dichiarazione viene <strong>trasmessa subito da questo sito</strong> (non serve il tuo programma di posta) e riceverai via email, su supporto durevole, un avviso di ricevimento con il contenuto, la data e l'ora di trasmissione.</p>
 <dl><dt>Nome</dt><dd id="rn"></dd><dt>Contratto</dt><dd id="rc"></dd><dt>Email per la conferma</dt><dd id="re"></dd></dl>
 <button type="button" id="confirm">Conferma recesso</button><button type="button" id="back" class="alt">Modifica</button>
 </section>
-<p id="done" class="note" aria-live="polite">Se non si è aperto il programma di posta, <a id="mt" href="#">clicca qui per riaprire l'email già compilata</a>, oppure scrivi tu a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]» e gli stessi dati. Il recesso è valido anche se inviato con qualsiasi altra dichiarazione esplicita all'email del venditore (indirizzo postale e telefono nelle condizioni di vendita). Se entro un giorno lavorativo non ricevi l'avviso di ricevimento, riscrivici.</p>
+<p id="done" class="note" aria-live="polite"><span id="dmsg"></span> <span id="dalt" style="display:none">Se l'invio non è riuscito puoi anche <a id="mt" href="#">aprire l'email già compilata</a> oppure scrivere tu a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]» e gli stessi dati (indirizzo postale e telefono nelle condizioni di vendita).</span></p>
 <noscript><p class="note">Per funzionare questa pagina usa JavaScript. Senza JavaScript scrivi a <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a> con oggetto «Recesso dal contratto [recesso]», indicando il tuo nome, il contratto (data dell'ordine o numero della ricevuta) e l'email a cui vuoi ricevere la conferma.</p></noscript>
 <p class="small">Non chiediamo motivi. Se hai chiesto di iniziare subito il servizio, valgono le regole sul proporzionale e sulla perdita del recesso a esecuzione completa descritte nelle condizioni. Dati usati solo per gestire il recesso: <a href="/audit/privacy-audit.html">informativa privacy</a>.</p>
 <p class="small"><a href="/condizioni/">Condizioni di vendita</a> · <a href="/audit/privacy-audit.html">Informativa privacy</a> · <a href="/audit/#premium">Torna al Report completo</a></p>
-<script>(function(){var f=document.getElementById("f"),s2=document.getElementById("step2"),dn=document.getElementById("done"),O={s:"Recesso dal contratto [recesso]",b0:"Dichiaro di recedere dal contratto di acquisto del Report completo (audit personalizzato del sito).",l:["Nome", "Contratto", "Email per la conferma"],t:"Compilato sul sito il"};
+<script>(function(){var EP="",f=document.getElementById("f"),s2=document.getElementById("step2"),dn=document.getElementById("done"),dm=document.getElementById("dmsg"),da=document.getElementById("dalt"),cb=document.getElementById("confirm"),O={s:"Recesso dal contratto [recesso]",b0:"Dichiaro di recedere dal contratto di acquisto del Report completo (audit personalizzato del sito).",l:["Nome", "Contratto", "Email per la conferma"],t:"Compilato sul sito il"},M={"ok": "Recesso trasmesso e registrato. Riferimento: {ref}. Data e ora di trasmissione: {when} (ora italiana). Ti abbiamo inviato l'avviso di ricevimento all'email indicata: se non lo trovi entro pochi minuti controlla lo spam e scrivici.", "already": "Questo recesso risulta già trasmesso e registrato (riferimento {ref}, {when} ora italiana): non è stato registrato una seconda volta e l'avviso di ricevimento è già stato inviato.", "norcpt": "Il recesso è stato trasmesso e registrato (riferimento {ref}, {when} ora italiana) ma non siamo riusciti a inviarti ora l'avviso di ricevimento. Salva questa schermata: ti scriveremo all'email indicata; puoi anche scrivere all'indirizzo qui sotto.", "fail": "Non siamo riusciti a trasmettere il recesso: NON risulta registrato. Riprova tra poco oppure usa l'alternativa qui sotto (email diretta al venditore), valida allo stesso modo.", "invalid": "Controlla i dati: nome, contratto ed email valida sono obbligatori.", "busy": "Sistema occupato, riprova tra qualche secondo.", "limit": "Servizio temporaneamente non disponibile: usa l'alternativa qui sotto (email diretta)."},L="it-IT";
 function v(i){return f.elements[i].value.trim()}
+function body(){return O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString()}
+function mailto(){return "mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(body())}
+function show(t,alt){dm.textContent=t;da.style.display=alt?"inline":"none";if(alt)document.getElementById("mt").href=mailto();dn.style.display="block";dn.scrollIntoView&&dn.scrollIntoView()}
+function when(s){try{return new Date(s).toLocaleString(L,{timeZone:"Europe/Rome",dateStyle:"short",timeStyle:"medium"})}catch(e){return s}}
+function fill(m,r){return m.replace("{ref}",r.ref||"").replace("{when}",when(r.transmitted_at))}
 document.getElementById("go").onclick=function(){if(!f.reportValidity())return;
  document.getElementById("rn").textContent=v("n");document.getElementById("rc").textContent=v("c");document.getElementById("re").textContent=v("e");
  f.style.display="none";s2.style.display="block";window.scrollTo(0,0)};
 document.getElementById("back").onclick=function(){s2.style.display="none";f.style.display="block"};
-document.getElementById("confirm").onclick=function(){var b=O.b0+"\n\n"+O.l[0]+": "+v("n")+"\n"+O.l[1]+": "+v("c")+"\n"+O.l[2]+": "+v("e")+"\n\n"+O.t+" "+new Date().toISOString();
- var u="mailto:aiworkflowlab.channel@gmail.com?subject="+encodeURIComponent(O.s)+"&body="+encodeURIComponent(b);document.getElementById("mt").href=u;dn.style.display="block";location.href=u};
+cb.onclick=function(){if(cb.disabled)return;
+ if(!EP){show(M.fail,true);return}
+ cb.disabled=true;var old=cb.textContent;cb.textContent="Invio in corso…";var ac=new AbortController(),to=setTimeout(function(){ac.abort()},25000);
+ fetch(EP,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:v("n"),contract:v("c"),email:v("e"),lang:"it",website:f.elements["website"].value}),signal:ac.signal,redirect:"follow"})
+  .then(function(r){return r.json()}).then(function(r){clearTimeout(to);
+   if(r&&r.ok&&(r.status==="received"||r.status==="already")){s2.style.display="none";show(fill(r.status==="already"?M.already:M.ok,r),false)}
+   else if(r&&r.ok&&r.status==="recorded_no_receipt"){s2.style.display="none";show(fill(M.norcpt,r),true)}
+   else{cb.disabled=false;cb.textContent=old;show(r&&M[r.error]?M[r.error]:M.fail,!(r&&r.error==="invalid"))}})
+  .catch(function(){clearTimeout(to);cb.disabled=false;cb.textContent=old;show(M.fail,true)})};
 })();</script>
 </body>
 </html>
