@@ -7,10 +7,19 @@
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://talrena.rinveta.com/recesso/en/">
 <link rel="alternate" hreflang="it" href="https://talrena.rinveta.com/recesso/">
-<style>body{max-width:720px;margin:0 auto;padding:24px 20px;font:16px/1.55 system-ui,Arial,sans-serif;color:#1d2733}h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.6em}a{color:#0b6e4f}label{display:block;font-weight:600;margin:14px 0 4px}input[type=text],input[type=email]{width:100%;padding:10px;border:1px solid #b9c4c0;border-radius:6px;font:inherit;box-sizing:border-box}button{background:#0b6e4f;color:#fff;border:0;border-radius:6px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;margin:16px 8px 0 0}button.alt{background:#fff;color:#0b6e4f;border:1px solid #0b6e4f}.note{border-left:4px solid #c9a227;background:#fffaf0;padding:10px 14px;border-radius:4px;font-size:.92rem}.small{font-size:.88rem;color:#5b6876}#step2,#done{display:none}dl{margin:0}dt{font-weight:600;margin-top:10px}dd{margin:2px 0 0;white-space:pre-wrap}</style>
+<!--tl-css--><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><meta name="theme-color" content="#112A44"><link rel="preload" href="/assets/fonts/poppins-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/talrena.css"><!--/tl-css-->
+<style>
+  #step2,#done{display:none}
+  dl{margin:0}
+  dt{font-weight:600;margin-top:10px}
+  dd{margin:2px 0 0;white-space:pre-wrap}
+</style>
 <!--a90-gc--><script>window.goatcounter={referrer:function(d){var c=window.goatcounter.get_query('c');return c&&/^[a-z0-9-]{1,20}$/.test(c)?'c:'+c:d}}</script><script data-goatcounter="https://agent90.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
-<body>
+<body><!--tl-header-->
+<a class="tl-skip" href="#main">Vai al contenuto</a>
+<header class="tl-header"><div class="tl-wrap tl-bar"><a class="tl-brand" href="/" aria-label="Talrena, pagina iniziale"><img src="/assets/logo.svg" alt="Talrena" width="147" height="40"></a><nav class="tl-nav" aria-label="Principale"><ul><li><a href="/#guide">Guide</a></li><li><a href="/#strumenti">Strumenti</a></li><li><a href="/#video">Video</a></li><li><a href="/osservatorio/">Dati</a></li><li><a class="tl-cta-link" href="/audit/">Audit sito</a></li></ul></nav><details class="tl-menu"><summary>Menu</summary><ul><li><a href="/#guide">Guide</a></li><li><a href="/#strumenti">Strumenti</a></li><li><a href="/#video">Video</a></li><li><a href="/osservatorio/">Dati</a></li><li><a href="/audit/">Audit sito</a></li></ul></details></div></header>
+<!--/tl-header--><!--tl-main--><main id="main" class="tl-legal"><!--/tl-main-->
 <h1>Withdraw from the contract here</h1>
 <p class="small"><a href="../">Versione italiana</a></p>
 <p>Use this function if you bought the Full report as a consumer and wish to withdraw within 14 days of the conclusion of the contract (see the <a href="/condizioni/en/">terms of sale</a>, section 6). Your withdrawal is treated as exercised in time if your statement is sent before the 14 days expire.</p>
@@ -55,5 +64,25 @@ cb.onclick=function(){if(cb.disabled)return;
  post(body).catch(function(){return new Promise(function(ok){setTimeout(ok,1500)}).then(function(){return post(body)})})
   .then(function(r){end(r,old)},function(){cb.disabled=false;cb.textContent=old;show(M.unc,true)})};
 })();</script>
-</body>
+<!--tl-mainend--></main><!--/tl-mainend--><!--tl-footer-->
+<footer class="tl-footer"><div class="tl-wrap">
+<div class="tl-fcols">
+<div><img src="/assets/logo-light.svg" alt="Talrena" width="147" height="40">
+<p>Affitti brevi in regola, con le fonti ufficiali.</p>
+<p>Contatti: <a href="mailto:aiworkflowlab.channel@gmail.com">aiworkflowlab.channel@gmail.com</a></p></div>
+<div><h2>Esplora</h2><ul>
+<li><a href="/#guide">Guide</a></li><li><a href="/#strumenti">Strumenti</a></li><li><a href="/#video">Video</a></li>
+<li><a href="/osservatorio/">Dati dall'Osservatorio</a></li><li><a href="/audit/">Audit sito</a></li></ul></div>
+<div><h2>Informazioni</h2><ul>
+<li><a href="/guide/metodo-e-trasparenza/">Metodo e trasparenza</a></li>
+<li><a href="/audit/privacy-audit.html">Privacy</a></li><li><a href="/condizioni/">Condizioni</a></li>
+<li><a href="/recesso/">Recesso</a></li></ul></div>
+<div><h2>App</h2><ul>
+<li><a href="/app-email/">App Agent90 mail</a></li>
+<li><a href="/talrena-publisher/privacy/">Privacy app Talrena Publisher</a></li></ul></div>
+</div>
+<div class="tl-fbase"><p>Talrena è un progetto <a href="https://rinveta.com/">Rinveta</a>.</p>
+<p>Guide informative, non consulenza legale o fiscale.</p></div>
+</div></footer>
+<!--/tl-footer--></body>
 </html>
