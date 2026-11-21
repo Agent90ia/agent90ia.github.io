@@ -37,6 +37,7 @@
 <li>L'obbligo vale anche per <strong>case e appartamenti per vacanze, affittacamere e B&amp;B</strong> e, dal 2018, per chi loca immobili con contratti <strong>inferiori a 30 giorni</strong> (DL 113/2018, art. 19-bis).</li>
 <li>Le credenziali si chiedono <strong>alla Questura competente per territorio</strong>: il portale lo dice nelle sue FAQ (<a href="#accesso">come ottenere l'accesso</a>).</li>
 <li>Dopo l'invio il sistema rilascia una <strong>ricevuta digitale</strong>: va scaricata (resta disponibile 30 giorni) e <strong>conservata cinque anni</strong>.</li>
+<li>Si può inviare anche con un <strong>file di testo</strong> (168 caratteri per riga, UTF-8, max 1000 righe): <a href="#tracciato">il tracciato spiegato</a>, con esempio fittizio.</li>
 <li>Il documento va verificato <strong>di persona</strong>: secondo la Questura di Piacenza, il check-in solo da remoto non soddisfa l'art. 109.</li>
 </ul>
 </section>
@@ -63,7 +64,51 @@
 
 <section class="card" id="invio">
 <h2>Invio: da portale o da software gestionale</h2>
-<p>Il portale è l'unico canale ufficiale (vedi sotto «Come si comunica»). Esiste anche un servizio web, descritto nel «Manuale Web-Services» del portale, che i software gestionali possono usare per inviare le schedine: se ne usi uno, resta tuo l'obbligo di verificare il documento di persona, di controllare la ricevuta e di rispettare i tempi. Il formato esatto dei dati e dei file di invio è definito dai manuali del portale, che qui non riassumiamo: apri sempre la versione più recente.</p>
+<p>Il portale è l'unico canale ufficiale (vedi sotto «Come si comunica»). Esiste anche un servizio web, descritto nel «Manuale Web-Services» del portale, che i software gestionali possono usare per inviare le schedine: se ne usi uno, resta tuo l'obbligo di verificare il documento di persona, di controllare la ricevuta e di rispettare i tempi. Se invii un file, il formato è descritto nella sezione <a href="#tracciato">Invio con file: il tracciato</a>; apri comunque sempre la versione più recente dei manuali del portale.</p>
+</section>
+
+<section class="card" id="tracciato">
+<h2>Invio con file: il tracciato</h2>
+<p>Oltre alla compilazione schedina per schedina, il portale accetta un <strong>file di testo (.txt)</strong> con più alloggiati, da caricare dal menù «File». Il formato è descritto nel paragrafo 12 («File tracciato record») del <a href="https://alloggiatiweb.poliziadistato.it/PortaleAlloggiati/Download/Manuali/MANUALEALBERGHI.pdf">Manuale Alberghi</a> del portale; qui lo riassumiamo dalla revisione del 27 gennaio 2022 (data di ultima modifica del file pubblicato, verificata il 21 novembre 2026). Se il portale ha una versione più recente, vale quella.</p>
+<h3>Regole generali</h3>
+<ul>
+<li>Codifica <strong>UTF-8</strong>, una riga per alloggiato, <strong>al massimo 1000 righe</strong> per file.</li>
+<li>Ogni riga è lunga <strong>168 caratteri</strong> a posizioni fisse: i campi non si separano con virgole o tabulazioni e ogni campo va riempito con spazi fino alla sua lunghezza.</li>
+<li>Alla fine di ogni riga si aggiungono i due caratteri di <strong>CR LF</strong> (codici ASCII 13 e 10), <strong>tranne che all'ultima riga</strong> del file.</li>
+<li>Un capofamiglia o capogruppo va scritto con i suoi familiari o componenti nelle <strong>righe immediatamente successive</strong>.</li>
+</ul>
+<h3>Campi e lunghezze</h3>
+<p>Le posizioni sono contate da 0, come nello schema del manuale. «Familiari e membri» sono i tipi di alloggiato 19 e 20; gli altri tipi (16, 17, 18) sono ospite singolo, capofamiglia e capogruppo.</p>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Campo</th><th>Da</th><th>A</th><th>Lung.</th><th>Singolo, capo</th><th>Familiari, membri</th><th>Note</th></tr></thead>
+<tbody><tr><td>Tipo alloggiato</td><td>0</td><td>1</td><td>2</td><td>Sì</td><td>Sì</td><td>Codice dalla tabella «alloggiati» del portale (16-17-18 oppure 19-20)</td></tr><tr><td>Data di arrivo</td><td>2</td><td>11</td><td>10</td><td>Sì</td><td>Sì</td><td>gg/mm/aaaa; oggi o il giorno precedente</td></tr><tr><td>Giorni di permanenza</td><td>12</td><td>13</td><td>2</td><td>Sì</td><td>Sì</td><td>Massimo 30</td></tr><tr><td>Cognome</td><td>14</td><td>63</td><td>50</td><td>Sì</td><td>Sì</td><td>Completare con spazi fino a 50</td></tr><tr><td>Nome</td><td>64</td><td>93</td><td>30</td><td>Sì</td><td>Sì</td><td>Completare con spazi fino a 30</td></tr><tr><td>Sesso</td><td>94</td><td>94</td><td>1</td><td>Sì</td><td>Sì</td><td>1 = maschio, 2 = femmina</td></tr><tr><td>Data di nascita</td><td>95</td><td>104</td><td>10</td><td>Sì</td><td>Sì</td><td>gg/mm/aaaa</td></tr><tr><td>Comune di nascita</td><td>105</td><td>113</td><td>9</td><td>Se nato in Italia</td><td>Se nato in Italia</td><td>Codice dalla tabella comuni; 9 spazi se nato all'estero</td></tr><tr><td>Provincia di nascita</td><td>114</td><td>115</td><td>2</td><td>Se nato in Italia</td><td>Se nato in Italia</td><td>Sigla (targa automobilistica, Roma = RM); 2 spazi se nato all'estero</td></tr><tr><td>Stato di nascita</td><td>116</td><td>124</td><td>9</td><td>Sì</td><td>Sì</td><td>Codice dalla tabella stati, anche per chi è nato in Italia</td></tr><tr><td>Cittadinanza</td><td>125</td><td>133</td><td>9</td><td>Sì</td><td>Sì</td><td>Codice dalla tabella stati</td></tr><tr><td>Tipo documento</td><td>134</td><td>138</td><td>5</td><td>Sì</td><td>Spazi</td><td>Codice dalla tabella documenti</td></tr><tr><td>Numero documento</td><td>139</td><td>158</td><td>20</td><td>Sì</td><td>Spazi</td><td>Completare con spazi fino a 20</td></tr><tr><td>Luogo di rilascio</td><td>159</td><td>167</td><td>9</td><td>Sì</td><td>Spazi</td><td>Codice comune (se rilasciato in Italia) o stato</td></tr></tbody></table></div>
+<p>I primi 11 campi (134 caratteri) vanno compilati per tutti. Gli ultimi tre (tipo documento, numero, luogo di rilascio: 34 caratteri) si compilano solo per ospite singolo, capofamiglia e capogruppo; per <strong>familiari e membri di un gruppo</strong> al loro posto si scrivono 34 spazi, così la riga resta di 168 caratteri. Lunghezza totale con CR LF: 170.</p>
+<p>Le <strong>tabelle dei codici</strong> (tipo alloggiato, comuni, stati, documenti) non le riproduciamo: si scaricano dal portale e vanno prese da lì, aggiornate.</p>
+<h3>Variante con appartamenti</h3>
+<p>Chi gestisce più appartamenti può usare il «File Unico con Appartamenti» (spunta nella schermata di invio). La riga ha <strong>6 caratteri in più</strong> in coda, l'<strong>IDAPPARTAMENTO</strong> (posizioni 168-173), per 174 caratteri (176 con CR LF). L'ID deve essere presente nell'elenco appartamenti del portale e non disabilitato (manuale, par. 12.1).</p>
+<h3>Esempio con dati fittizi</h3>
+<p>Una riga per un ospite singolo, tutta inventata. Le lettere ripetute (<code>CCCCCCCCC</code>, <code>PP</code>, <code>SSSSSSSSS</code>, <code>DDDDD</code>, <code>NNNNNNNN</code>, <code>LLLLLLLLL</code>) al posto dei codici <strong>non sono codici validi</strong>: stanno solo a segnare la posizione e la lunghezza dei campi. I puntini <code>·</code> rappresentano gli spazi.</p>
+<pre style="overflow-x:auto"><code>1615/12/202602COGNOMEESEMPIO····································NOMEESEMPIO···················101/01/1980CCCCCCCCCPPSSSSSSSSSSSSSSSSSSDDDDDNNNNNNNN············LLLLLLLLL</code></pre>
+<p>Per un familiare (tipo 19 o 20) i primi 134 caratteri sono compilati allo stesso modo e gli ultimi 34 sono tutti spazi.</p>
+<h3>Errori di formato tipici</h3>
+<ul>
+<li><strong>Riga più corta o più lunga di 168 caratteri</strong>: spazi finali tagliati dall'editor o campi non riempiti fino alla lunghezza.</li>
+<li><strong>Date nel formato sbagliato</strong> (non gg/mm/aaaa) o data di arrivo diversa da oggi o dal giorno precedente.</li>
+<li><strong>Codici dei campi non presenti nelle tabelle</strong> del portale, o comune e provincia compilati per chi è nato all'estero (vanno invece spazi).</li>
+<li><strong>Familiari scritti prima del capofamiglia</strong>, o righe di familiare con i dati del documento invece degli spazi.</li>
+<li><strong>Codifica non UTF-8</strong>, oltre 1000 righe, oppure CR LF aggiunto anche all'ultima riga.</li>
+</ul>
+<p>Questo elenco ricava le cause probabili dalle regole del manuale; i motivi di esclusione effettivi li mostra il portale riga per riga.</p>
+<h3>Dopo «Elabora»: come leggere l'esito</h3>
+<ul>
+<li>Dopo aver scelto il file con «Seleziona», il pulsante <strong>«Elabora»</strong> ne verifica formato e contenuto e mostra quante schedine sono corrette e quante errate. Se è tutto corretto si prosegue con «Prosegui».</li>
+<li>Se ci sono errori, il portale elenca le schedine scartate con il <strong>numero di riga</strong> del file e il motivo dell'esclusione.</li>
+<li>Se almeno una schedina è corretta puoi scegliere: <strong>«Invia»</strong> trasmette solo quelle corrette (le errate si correggono e si rinviano a parte) oppure <strong>«Annulla»</strong> per correggere tutto e ricaricare l'intero file. Solo le schedine corrette vengono trasmesse.</li>
+<li>Dopo l'invio scarica la ricevuta, come per le altre modalità (vedi sopra).</li>
+</ul>
+<h3>Gestionali e PMS</h3>
+<p>Chi usa un gestionale o un software di check-in di solito non scrive il file a mano: molti programmi lo generano da soli o inviano le schedine tramite il servizio web del portale. In quel caso il file e le tabelle dei codici sono affare del software; resta tuo il controllo del documento di persona e della ricevuta.</p>
+<p class="note">Non è consulenza. Il tracciato può cambiare: prima di caricare un file reale verifica sempre sul portale e sul manuale aggiornato. Non pubblicare né condividere file con dati reali di ospiti.</p>
 </section>
 
 <section class="card" id="chi">
@@ -102,7 +147,7 @@
 <ul>
 <li><strong>Self check-in e key box:</strong> la Questura di Piacenza richiama la circolare del Ministero dell'Interno 557/ST/221.3.1.0: il gestore deve verificare di persona che il documento corrisponda a chi occupa l'alloggio, quindi codici di apertura e identificazione solo telematica non bastano. Se usi un software di check-in, resta a tuo carico la verifica del documento.</li>
 <li><strong>Pensare che lo faccia il portale di prenotazione:</strong> nelle fonti lette qui non c'è alcuna indicazione che la prenotazione tramite Booking o Airbnb sostituisca la comunicazione alla Questura. Il portale ufficiale parla di obbligo del gestore.</li>
-<li><strong>Dimenticare i minori e gli accompagnatori:</strong> la comunicazione riguarda le persone alloggiate. Per i dettagli sui campi da compilare si usano i manuali del portale (sezione «Supporto &gt; Manuali»).</li>
+<li><strong>Dimenticare i minori e gli accompagnatori:</strong> la comunicazione riguarda le persone alloggiate. Per i campi da compilare si usano i manuali del portale (sezione «Supporto &gt; Manuali»); per il file vedi <a href="#tracciato">il tracciato</a>.</li>
 <li><strong>Non scaricare la ricevuta entro i 30 giorni.</strong></li>
 </ul>
 </section>
@@ -129,6 +174,7 @@
 <h2>Fonti</h2>
 <ul>
 <li>Servizio Alloggiati, Polizia di Stato: <a href="https://alloggiatiweb.poliziadistato.it/PortaleAlloggiati/">home del portale</a>, <a href="https://alloggiatiweb.poliziadistato.it/PortaleAlloggiati/FAQ.aspx">FAQ</a> e <a href="https://alloggiatiweb.poliziadistato.it/PortaleAlloggiati/Download/Normativa/109_TULPS.pdf">testo dell'art. 109 TULPS con aggiornamenti</a> (pagine lette l'8 novembre 2026; FAQ e home riletti il 21 novembre 2026).</li>
+<li>Servizio Alloggiati, Polizia di Stato, <a href="https://alloggiatiweb.poliziadistato.it/PortaleAlloggiati/Download/Manuali/MANUALEALBERGHI.pdf">Manuale Alberghi («Guida servizio Alloggiati Web»)</a>, in particolare par. 4, 5 e 12; file con ultima modifica del 27 gennaio 2022, letto il 21 novembre 2026.</li>
 <li>Questura di Piacenza, <a href="https://questure.poliziadistato.it/statics/45/info-alloggiati.pdf">«La comunicazione delle persone alloggiate nelle strutture ricettive»</a> (aggiornamento dicembre 2024).</li>
 <li>Questura di Modena, <a href="https://questure.poliziadistato.it/it/Modena/articolo/11985c41be98db7a1152340644">«Alloggiati Web»: novità sull'obbligo di registrazione e comunicazione</a>.</li>
 <li>Art. 109 e art. 17, R.D. 773/1931; art. 19-bis, DL 4 ottobre 2018, n. 113 (L. 132/2018); art. 5, DL 14 giugno 2019, n. 53; D.M. Interno 7 gennaio 2013 e D.M. 16 settembre 2021 (richiamati dal portale).</li>
